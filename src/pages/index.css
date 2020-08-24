@@ -1,0 +1,32 @@
+body {
+  margin: 0;
+}
+.MainDiv {
+    display: flex;
+}
+.SelectProduct {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  right: 33px;
+  top: 358px;
+}
+.SelectRadioButton{
+  cursor: pointer;
+
+}
+@media only screen and (max-width: 600px) {
+    .MainDiv {
+        flex-direction: column;
+        
+    }
+    .SelectProduct {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 882px;
+        right: 4%;
+        width: 10px;
+        height: 10px;
+      }
+  }

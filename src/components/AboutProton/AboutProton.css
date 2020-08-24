@@ -1,0 +1,50 @@
+
+
+.About {
+  width: 50%;
+  top: 0px;
+  left: 0px;
+  height: 768px;
+  background: #272b35 0% 0% no-repeat padding-box;
+  opacity: 1;
+  position: absolute;
+}
+.AboutTitle {
+  top: 254px;
+  left: 139px;
+  width: 377px;
+  height: 66px;
+  text-align: left;
+  font: normal normal bold 59px/57px Arial;
+  letter-spacing: 0px;
+  opacity: 1;
+  color: #ffffff;
+  position: absolute;
+}
+.AboutText {
+  top: 370px;
+  left: 139px;
+  width: 434px;
+  height: 46px;
+  color: var(--unnamed-color-ffffff);
+  text-align: left;
+  font: normal normal normal 19px/25px Arial;
+  letter-spacing: 0px;
+  color: #ffffff;
+  opacity: 1;
+  position: absolute;
+}
+.AboutPicture {
+  top: 0px;
+  left: 683px;
+  width: 50%;
+  height: 768px;
+  /* mix-blend-mode: multiply; */
+  opacity: 1;
+  background-image: url(../../pictures/mountain\ overlay.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  position: absolute;
+  opacity: 1;
+}
