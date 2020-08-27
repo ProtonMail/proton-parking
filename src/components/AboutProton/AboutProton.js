@@ -7,8 +7,6 @@ import IconMd from "../../pictures/icon-md.svg"
 import IconRd from "../../pictures/icon-rd.svg"
 import Mountain from "../../pictures/mountain.jpg"
 import MountainOverlay from "../../pictures/mountain overlay.jpg"
-import Img from 'gatsby-image'
-import { graphql } from "gatsby"
 
 export default function AboutProton() {
   return (
@@ -49,16 +47,3 @@ export default function AboutProton() {
     </div>
   )
 }
-export const query = graphql`
-  query {
-    file(relativePath: { eq: "src/pictures/mountain.jpg" }) {
-      childImageSharp {
-        # Specify the image processing specifications right in the query.
-        # Makes it trivial to update as your page's design changes.
-        fixed(width: 125, height: 125) {
-          ...GatsbyImageSharpFixed
-        }
-      }
-    }
-  }
-`

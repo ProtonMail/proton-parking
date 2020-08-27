@@ -6,10 +6,9 @@ import IconIg from "../../pictures/icon-ig.svg"
 import IconMd from "../../pictures/icon-md.svg"
 import IconRd from "../../pictures/icon-rd.svg"
 
-function WelcomeProton() {
+function WelcomeProton(props) {
   return (
     <div className="WelcomeProton w50 flex flex-column onmobile-w100 relative">
-      {/* <div className=""> */}
       <h1 className="WelcomeProtonTitle color-white ">
         Welcome to <span style={{ color: "#657EE4" }}>Proton</span>
       </h1>
@@ -24,7 +23,6 @@ function WelcomeProton() {
       <div className="ArrowLeft"></div>
       <span className="arrow arrow-right"></span>
 
-      {/* </div> */}
       <div className="flex pt2 pl2 LinksCustom">
         <a href="https://www.facebook.com/ProtonMail" target="_Blank">
           <img className="IconFb" src={IconFb} />
