@@ -1,0 +1,41 @@
+.AboutProton {
+  @include breakpoint($breakpoint-small) {
+    flex-direction: column;
+  }
+}
+.About {
+  width: 50%;
+  height: 768px;
+  background: #272b35 0% 0% no-repeat padding-box;
+  @include breakpoint($breakpoint-small) {
+  width: 100%;
+  }
+}
+.AboutTitle {
+  margin-bottom: 10%;
+  text-align: left;
+  font: normal normal bold 59px/57px Arial;
+  letter-spacing: 0px;
+  opacity: 1;
+  color: #ffffff;
+}
+.AboutText {
+  color: var(--unnamed-color-ffffff);
+  text-align: left;
+  font: normal normal normal 19px/25px Arial;
+  letter-spacing: 0px;
+  color: #ffffff;
+  opacity: 1;
+}
+.icons {
+  width: 25px;
+  background: var(--unnamed-color-657ee4) 0% 0% no-repeat padding-box;
+  opacity: 1;
+}
+.AboutPicture {
+  width: 50%;
+  height: 768px;
+  @include breakpoint($breakpoint-small) {
+    width: 100%;
+  }
+}

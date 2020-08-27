@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from "react"
-import "./index.css"
+import "./index.scss"
 import WelcomeProton from "../components/WelcomeProton/WelcomeProton"
 import ProotonProducts from "../components/ProtonProducts/ProtonProducts"
 import AboutProton from "../components/AboutProton/AboutProton"
@@ -19,7 +19,7 @@ export default function Home() {
       text: "Encrypted email that respects your privacy",
       logo: LogoMail,
       color: "#657ee4",
-      button: "Learn More"
+      button: "Learn More",
     },
     vpn: {
       pic: PictureVPN,
@@ -27,14 +27,14 @@ export default function Home() {
         "High-speed VPN to access blocked content and secure your Internet connection",
       logo: LogoVPN,
       color: "#5FB364",
-      button: "Learn More"
+      button: "Learn More",
     },
     calendar: {
       pic: PictureCalendar,
       text: "Encrypted calendar that keeps your plans private",
       logo: LogoCalendar,
       color: "#657EE4",
-      button: "Learn More"
+      button: "Learn More",
     },
     drive: {
       pic: PictureDrive,
@@ -42,14 +42,14 @@ export default function Home() {
         "Encrypted file storage on the cloud to store and backup your files safely",
       logo: LogoDrive,
       color: "#00C5B8",
-      button: "Coming Soon"
+      button: "Coming Soon",
     },
   }
   const [checked, setChecked] = useState("mail")
   const [about, setAbout] = useState(true)
   const checkedRef = useRef(checked)
   checkedRef.current = checked
-  const TTT = ["mail", "vpn", "calendar", "drive"]
+  const TTT = ["mail", "vpn", "calendar", "drive", "about"]
 
   const handleRadioChange = e => {
     setChecked(e.target.value)
@@ -70,10 +70,10 @@ export default function Home() {
 
   return (
     <div>
-      {!about ? (
+      {checked === "about" ? (
         <AboutProton />
       ) : (
-        <div className="MainDiv" >
+        <div className="MainDiv flex">
           <WelcomeProton />
           <ProotonProducts
             picture={allProperties[checked].pic}
@@ -82,58 +82,67 @@ export default function Home() {
             color={allProperties[checked].color}
             button={allProperties[checked].button}
           />
-          {/* {Object.keys(allProperties).map(key => {
-          <input
-          className="SelectRadioButton"
-          type="radio"
-          id={key}
-          name={key}
-          value={key}
-          checked={checked === {key}}
-          onChange={handleRadioChange}
-        />
-        })} */}
-          <div className="SelectProduct">
-            <input
-              className="SelectRadioButton"
-              type="radio"
-              id="2"
-              name="mail"
-              value="mail"
-              checked={checked === "mail"}
-              onChange={handleRadioChange}
-            />
-            <input
-              className="SelectRadioButton"
-              type="radio"
-              id="3"
-              name="mail"
-              value="vpn"
-              checked={checked == "vpn"}
-              onChange={handleRadioChange}
-            />
-            <input
-              className="SelectRadioButton"
-              type="radio"
-              id="4"
-              name="mail"
-              value="calendar"
-              checked={checked === "calendar"}
-              onChange={handleRadioChange}
-            />
-            <input
-              className="SelectRadioButton"
-              type="radio"
-              id="5"
-              name="mail"
-              value="drive"
-              checked={checked === "drive"}
-              onChange={handleRadioChange}
-            />
-            <input type="radio" id="6" name="mail" value="" />
-          </div>
         </div>
       )}
+      <div className="SelectProduct flex flex-column absolute">
+        <input
+          className="SelectRadioButton cursor-pointer"
+          type="radio"
+          id="2"
+          name="mail"
+          value="mail"
+          checked={checked === "mail"}
+          onChange={handleRadioChange}
+        />
+        <input
+          className="SelectRadioButton cursor-pointer"
+          type="radio"
+          id="3"
+          name="mail"
+          value="vpn"
+          checked={checked == "vpn"}
+          onChange={handleRadioChange}
+        />
+        <input
+          className="SelectRadioButton cursor-pointer"
+          type="radio"
+          id="4"
+          name="mail"
+          value="calendar"
+          checked={checked === "calendar"}
+          onChange={handleRadioChange}
+        />
+        <input
+          className="SelectRadioButton cursor-pointer"
+          type="radio"
+          id="5"
+          name="mail"
+          value="drive"
+          checked={checked === "drive"}
+          onChange={handleRadioChange}
+        />
+        <input
+          className="SelectRadioButton cursor-pointer"
+          type="radio"
+          id="5"
+          name="about"
+          value="about"
+          checked={checked === "about"}
+          onChange={handleRadioChange}
+        />
+      </div>
     </div>
   )
 }
+
+// {/* {Object.keys(allProperties).map(key => {
+//       <input
+//       className="SelectRadioButton"
+//       type="radio"
+//       id={key}
+//       name={key}
+//       value={key}
+//       checked={checked === {key}}
+//       onChange={handleRadioChange}
+//     />
+//     })} */}
