@@ -13,7 +13,6 @@ export default function AboutProton() {
         <div className='about-proton flex relative'>
             <div
                 className='about-container flex bg-global-grey'
-                // style={{ backgroundImage: `url(${Mountain})` }}
             >
                 <div className='w70 mauto about-content'>
                     <h2 className='about-title'>

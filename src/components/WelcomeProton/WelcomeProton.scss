@@ -2,7 +2,7 @@
     height: 768px;
     position: relative;
     @include breakpoint($breakpoint-small) {
-        left: 0px;
+
         height: 870px;
     }
 }
@@ -40,11 +40,9 @@
     }
 }
 .welcomeProton-text {
-    color: var(--unnamed-color-ffffff);
     text-align: left;
-    font: normal normal bold 19px/25px Arial;
-    letter-spacing: 0px;
-    color: #ffffff;
+    font: normal normal bold $base-font Arial;
+    color: $white;
     opacity: 1;
     padding-right: 106px;
     padding-left: 139px;
@@ -59,7 +57,7 @@
     }
 }
 .ArrowLeft {
-    border: 2px solid #ffffff;
+    border: 2px solid $white;
     opacity: 1;
     width: 82px;
     height: 0px;
@@ -77,15 +75,15 @@
     display: inline-block;
     width: 15px;
     height: 15px;
-    border-top: 3px solid #fff;
-    border-right: 3px solid #fff;
+    border-top: 3px solid $white;
+    border-right: 3px solid $white;
     position: absolute;
     top: 482px;
     left: 208px;
     @include breakpoint($breakpoint-small) {
         display: inline-block;
-        border-top: 3px solid #fff;
-        border-right: 3px solid #fff;
+        border-top: 3px solid $white;
+        border-right: 3px solid $white;
         position: absolute;
         top: 816px;
         left: 43px;
