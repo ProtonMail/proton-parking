@@ -13,7 +13,6 @@
     "clean": "gatsby clean",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1",
     "extract": "./node_modules/.bin/babel --config-file ./babel-extract.config.js -o tmp/chunk.js 'src/**/*.{js,jsx,ts,tsx}' && rm -rf tmp"
-
   },
   "dependencies": {
     "design-system": "github:ProtonMail/design-system.git#master",
@@ -24,11 +23,14 @@
     "gatsby-plugin-robots-txt": "^1.5.1",
     "gatsby-plugin-sass": "^2.3.12",
     "gatsby-plugin-sharp": "^2.6.28",
+    "gatsby-plugin-typescript": "^2.4.18",
     "gatsby-source-filesystem": "^2.3.25",
     "gatsby-transformer-sharp": "^2.5.13",
     "i18next": "^19.7.0",
     "node-sass": "^4.14.1",
+    "proton-shared": "github:ProtonMail/proton-shared#master",
     "react": "^16.12.0",
+    "react-components": "github:ProtonMail/react-components#master",
     "react-dom": "^16.12.0",
     "react-helmet": "^6.1.0",
     "react-i18next": "^11.7.2"
@@ -36,6 +38,9 @@
   "devDependencies": {
     "@babel/cli": "^7.10.5",
     "@babel/plugin-transform-typescript": "^7.11.0",
+    "@types/node": "^14.6.2",
+    "@types/react": "^16.9.49",
+    "@types/react-dom": "^16.9.8",
     "babel-plugin-i18next-extract": "^0.7.2",
     "prettier": "2.0.5"
   },

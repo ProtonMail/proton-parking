@@ -13,8 +13,25 @@ import LogoCalendar from '../pictures/logo-cal.svg'
 import LogoDrive from '../pictures/logo-drive.svg'
 import LogoVPN from '../pictures/logo-vpn.svg'
 
+interface Property {
+    pic: string
+    text: string
+    logo: string
+    color: string
+    button: string
+}
+
+interface AllProperties {
+    [key: string]: Property
+    mail: Property
+    vpn: Property
+    calendar: Property
+    drive: Property
+}
+
 export default function Home() {
-    const allProperties = {
+    const listOfPages: string[] = ['mail', 'vpn', 'calendar', 'drive', 'about']
+    const allProperties: AllProperties = {
         mail: {
             pic: PictureMail,
             text: 'Encrypted email that respects your privacy',
@@ -48,7 +65,6 @@ export default function Home() {
     // const [about, setAbout] = useState(true)
     const checkedRef = useRef(checked)
     checkedRef.current = checked
-    const listOfPages = ['mail', 'vpn', 'calendar', 'drive', 'about']
     // const [widthh, setWidth] = useState(0)
 
     // useEffect(() => {
@@ -65,7 +81,7 @@ export default function Home() {
 
     // console.log('give height', widthh)
 
-    const handleRadioChange = (e) => {
+    const handleRadioChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         setChecked(e.target.value)
     }
 

@@ -6,7 +6,7 @@ import IconIg from '../../pictures/icon-ig.svg'
 import IconMd from '../../pictures/icon-md.svg'
 import IconRd from '../../pictures/icon-rd.svg'
 
-function WelcomeProton(props) {
+function WelcomeProton() {
     return (
         <div className='welcomeProton w50 flex flex-column onmobile-w100 relative bg-global-grey'>
             <h1 className='welcomeProton-title color-white '>
@@ -23,21 +23,21 @@ function WelcomeProton(props) {
             <span className='arrow arrow-right'></span>
 
             <div className='flex pt2 pl2 LinksCustom'>
-                <a href='https://www.facebook.com/ProtonMail' target='_Blank' alt='Proton on Facebook'>
+                <a href='https://www.facebook.com/ProtonMail' target='_Blank'>
                     <img className='IconFb' src={IconFb} alt='' />
                 </a>
-                <a href='' target='_Blank' alt='Proton on Twitter'>
+                <a href='' target='_Blank'>
                     <img className='IconTw' src={IconTw} alt='' />
                 </a>
-                <a href='' target='_Blank' alt='Proton on Instagram'>
+                <a href='' target='_Blank'>
                     {' '}
                     <img className='IconIg' src={IconIg} alt='' />
                 </a>
-                <a href='' target='_Blank' alt='Proton on Mastodon'>
+                <a href='' target='_Blank'>
                     {' '}
                     <img className='IconMd' src={IconMd} alt='' />
                 </a>
-                <a href='' target='_Blank' alt='Proton on Reddit'>
+                <a href='' target='_Blank'>
                     <img className='IconRd' src={IconRd} alt='' />
                 </a>
             </div>

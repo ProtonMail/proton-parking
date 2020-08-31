@@ -1,7 +1,15 @@
 import React from 'react'
 import '../../pages/index.scss'
 
-function ProotonProducts(props) {
+interface Props {
+    color: string
+    logo: string
+    button: string
+    picture: string
+    text: string
+}
+
+function ProotonProducts(props: Props) {
     return (
         <div className='protonProducts w50 relative onmobile-w100 ' style={{ backgroundColor: props.color }}>
             <h2>

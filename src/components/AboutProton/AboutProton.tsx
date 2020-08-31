@@ -11,9 +11,7 @@ import MountainOverlay from '../../pictures/mountain-overlay.jpg'
 export default function AboutProton() {
     return (
         <div className='about-proton flex relative'>
-            <div
-                className='about-container flex bg-global-grey'
-            >
+            <div className='about-container flex bg-global-grey'>
                 <div className='w70 mauto about-content'>
                     <h2 className='about-title'>
                         About <span className='color-pm-blue'>Proton</span>
@@ -22,21 +20,21 @@ export default function AboutProton() {
                         We believe universal access to privacy and security makes the world a better place.
                     </p>
                     <div className='flex flex-spacebetween w50 about-icons'>
-                        <a href='https://www.facebook.com/ProtonMail' target='_Blank' alt='Proton on Facebook'>
+                        <a href='https://www.facebook.com/ProtonMail' target='_Blank'>
                             <img className='AboutIconFb' src={IconFb} alt='' />
                         </a>
-                        <a href='' target='_Blank' alt='Proton on Twitter'>
+                        <a href='' target='_Blank'>
                             <img className='AboutIconTw' src={IconTw} alt='' />
                         </a>
-                        <a href='' target='_Blank' alt='Proton on Instagram'>
+                        <a href='' target='_Blank'>
                             {' '}
                             <img className='AboutIconIg' src={IconIg} alt='' />
                         </a>
-                        <a href='' target='_Blank' alt='Proton on Mastodon'>
+                        <a href='' target='_Blank'>
                             {' '}
                             <img className='AboutIconMd' src={IconMd} alt='' />
                         </a>
-                        <a href='' target='_Blank' alt='Proton on Reddit'>
+                        <a href='' target='_Blank'>
                             <img className='AboutIconRd' src={IconRd} alt='' />
                         </a>
                     </div>
