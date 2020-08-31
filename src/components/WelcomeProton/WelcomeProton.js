@@ -21,24 +21,24 @@ function WelcomeProton(props) {
 
             <div className='ArrowLeft'></div>
             <span className='arrow arrow-right'></span>
-           
+
             <div className='flex pt2 pl2 LinksCustom'>
-                <a href='https://www.facebook.com/ProtonMail' target='_Blank' alt="Proton on Facebook">
-                    <img className='IconFb' src={IconFb} />
+                <a href='https://www.facebook.com/ProtonMail' target='_Blank' alt='Proton on Facebook'>
+                    <img className='IconFb' src={IconFb} alt='' />
                 </a>
-                <a href='' target='_Blank' alt="Proton on Twitter">
-                    <img className='IconTw' src={IconTw} />
+                <a href='' target='_Blank' alt='Proton on Twitter'>
+                    <img className='IconTw' src={IconTw} alt='' />
                 </a>
-                <a href='' target='_Blank' alt="Proton on Instagram">
+                <a href='' target='_Blank' alt='Proton on Instagram'>
                     {' '}
-                    <img className='IconIg' src={IconIg} />
+                    <img className='IconIg' src={IconIg} alt='' />
                 </a>
-                <a href='' target='_Blank' alt="Proton on Mastodon">
+                <a href='' target='_Blank' alt='Proton on Mastodon'>
                     {' '}
-                    <img className='IconMd' src={IconMd} />
+                    <img className='IconMd' src={IconMd} alt='' />
                 </a>
-                <a href='' target='_Blank' alt="Proton on Reddit">
-                    <img className='IconRd' src={IconRd} />
+                <a href='' target='_Blank' alt='Proton on Reddit'>
+                    <img className='IconRd' src={IconRd} alt='' />
                 </a>
             </div>
         </div>

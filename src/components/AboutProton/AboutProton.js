@@ -24,21 +24,21 @@ export default function AboutProton() {
                     </p>
                     <div className='flex flex-spacebetween w50 about-icons'>
                         <a href='https://www.facebook.com/ProtonMail' target='_Blank' alt='Proton on Facebook'>
-                            <img className='AboutIconFb' src={IconFb} />
+                            <img className='AboutIconFb' src={IconFb} alt='' />
                         </a>
                         <a href='' target='_Blank' alt='Proton on Twitter'>
-                            <img className='AboutIconTw' src={IconTw} />
+                            <img className='AboutIconTw' src={IconTw} alt='' />
                         </a>
                         <a href='' target='_Blank' alt='Proton on Instagram'>
                             {' '}
-                            <img className='AboutIconIg' src={IconIg} />
+                            <img className='AboutIconIg' src={IconIg} alt='' />
                         </a>
                         <a href='' target='_Blank' alt='Proton on Mastodon'>
                             {' '}
-                            <img className='AboutIconMd' src={IconMd} />
+                            <img className='AboutIconMd' src={IconMd} alt='' />
                         </a>
                         <a href='' target='_Blank' alt='Proton on Reddit'>
-                            <img className='AboutIconRd' src={IconRd} />
+                            <img className='AboutIconRd' src={IconRd} alt='' />
                         </a>
                     </div>
                 </div>
