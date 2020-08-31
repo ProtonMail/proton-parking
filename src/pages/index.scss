@@ -50,13 +50,13 @@ body {
     margin: 0;
     background-color: $white;
 }
-.MainDiv {
+.main-container {
     height: 768px;
     background-color: $white;
     @include breakpoint($breakpoint-small) {
     }
 }
-.SelectProduct {
+.select-product {
     right: 33px;
     top: 358px;
     position: absolute;
@@ -67,7 +67,7 @@ body {
         width: 10px;
     }
 }
-.SelectRadioButton {
+.select-radioButton {
     cursor: pointer;
 }
 input[type='radio'] {

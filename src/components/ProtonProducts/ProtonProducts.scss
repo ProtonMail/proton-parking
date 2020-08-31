@@ -1,11 +1,11 @@
-.ProtonProducts {
+.protonProducts {
     height: 626px;
     opacity: 1;
     @include breakpoint($breakpoint-small) {
         height: 651px;
     }
 }
-.ProtonMailLogo {
+.protonProducts-logo {
     top: 113px;
     width: 269px;
     height: 40px;
@@ -16,7 +16,7 @@
         top: 145px;
     }
 }
-.ProtonMailText {
+.protonProducts-text {
     top: 190px;
     left: 0;
     right: 0;
@@ -31,7 +31,7 @@
         top: 258px;
     }
 }
-.ProtonMailButton {
+.protonProducts-button {
     top: 290px;
     margin-left: auto;
     margin-right: auto;
@@ -52,7 +52,7 @@
         top: 376px;
     }
 }
-.ProtonMailPic {
+.protonProducts-picture {
     top: 416px;
     margin-left: auto;
     margin-right: auto;

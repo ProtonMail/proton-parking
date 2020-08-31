@@ -1,4 +1,4 @@
-.WelcomeProton {
+.welcomeProton {
     height: 768px;
     position: relative;
     @include breakpoint($breakpoint-small) {
@@ -6,7 +6,7 @@
         height: 870px;
     }
 }
-.WelcomeProtonTitle {
+.welcomeProton-title {
     font: normal normal bold 59px/57px Arial;
     color: $white;
     margin-top: 102px;
@@ -22,7 +22,7 @@
         padding-left: 10%;
     }
 }
-.WelcomeProtonDesc {
+.welcomeProton-description {
     color: $white;
     padding-right: 258px;
     padding-left: 139px;
@@ -39,7 +39,7 @@
         position: absolute;
     }
 }
-.WelcomeProtonText {
+.welcomeProton-text {
     color: var(--unnamed-color-ffffff);
     text-align: left;
     font: normal normal bold 19px/25px Arial;

@@ -1,16 +1,16 @@
-.AboutProton {
+.about-proton {
     @include breakpoint($breakpoint-small) {
         flex-direction: column;
     }
 }
-.About {
+.about-container {
     width: 50%;
     height: 768px;
     @include breakpoint($breakpoint-small) {
         width: 100%;
     }
 }
-.AboutContent {
+.about-content {
     @include breakpoint($breakpoint-medium-landscape) {
         width: 80%;
     }
@@ -22,11 +22,11 @@
     }
 }
 
-.AboutTitle {
+.about-title {
     margin-bottom: 10%;
     font: normal normal bold 59px/57px Arial;
 }
-.AboutIcons {
+.about-icons {
     @include breakpoint($breakpoint-medium-landscape) {
         width: 70%;
     }
@@ -54,7 +54,7 @@
     width: 22px;
     height: 23px;
 }
-.AboutPicture {
+.about-picture {
     height: 768px;
     background-position: center;
     background-size: cover;

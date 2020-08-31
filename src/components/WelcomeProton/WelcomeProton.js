@@ -8,14 +8,14 @@ import IconRd from '../../pictures/icon-rd.svg'
 
 function WelcomeProton(props) {
     return (
-        <div className='WelcomeProton w50 flex flex-column onmobile-w100 relative bg-global-grey'>
-            <h1 className='WelcomeProtonTitle color-white '>
+        <div className='welcomeProton w50 flex flex-column onmobile-w100 relative bg-global-grey'>
+            <h1 className='welcomeProton-title color-white '>
                 Welcome to <span className='color-pm-blue'>Proton</span>
             </h1>
-            <p className='WelcomeProtonDesc color-white'>
+            <p className='welcomeProton-description color-white'>
                 You've arrived at a Proton product that doesn’t exist (yet).
             </p>
-            <p className='WelcomeProtonText color-white'>
+            <p className='welcomeProton-text color-white'>
                 But check out these other products that respect your privacy and keep your data safe.
             </p>
 

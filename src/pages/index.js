@@ -106,7 +106,7 @@ export default function Home() {
             {checked === 'about' ? (
                 <AboutProton />
             ) : (
-                <div className='MainDiv flex'>
+                <div className='main-container flex'>
                     <WelcomeProton />
                     <ProtonProducts
                         picture={allProperties[checked].pic}
@@ -118,13 +118,13 @@ export default function Home() {
                 </div>
             )}
             <div
-                className='SelectProduct flex flex-column absolute'
+                className='select-product flex flex-column absolute'
                 // style={{ top: checked === 'about'  ? '320px': '882px'}}
             >
                 {listOfPages.map((page) => {
                     return (
                         <input
-                            className='SelectRadioButton cursor-pointer'
+                            className='select-radioButton cursor-pointer'
                             type='radio'
                             id='2'
                             name={page}
