@@ -7,16 +7,16 @@
 module.exports = {
   /* Your site config here */
   siteMetadata: {
-    title: "Proton Parking",
+    title: 'Proton Parking Page',
   },
   plugins: [
     `gatsby-plugin-sass`,
     {
-      resolve: "gatsby-plugin-robots-txt",
+      resolve: 'gatsby-plugin-robots-txt',
       options: {
-        host: "",
-        sitemap: "",
-        policy: [{ userAgent: "*", disallow: "/" }],
+        host: '',
+        sitemap: '',
+        policy: [{ userAgent: '*', disallow: '/' }],
       },
     },
     {
@@ -33,19 +33,9 @@ module.exports = {
       resolve: `gatsby-plugin-react-i18next`,
       options: {
         path: `${__dirname}/locales`,
-        languages: [`en`],
+        languages: [`en`,`es`],
         defaultLanguage: `en`,
-        pages: [
-          {
-            matchPath: "/:lang?/blog/:uid",
-            getLanguageFromPath: true,
-            excludeLanguages: ["es"],
-          },
-          {
-            matchPath: "/preview",
-            languages: ["en"],
-          },
-        ],
+        redirect: false
       },
     },
   ],
