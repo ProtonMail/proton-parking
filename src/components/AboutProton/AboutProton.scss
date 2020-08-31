@@ -11,7 +11,6 @@
     }
 }
 .AboutContent {
-    width: 70%;
     @include breakpoint($breakpoint-medium-landscape) {
         width: 80%;
     }
@@ -25,19 +24,7 @@
 
 .AboutTitle {
     margin-bottom: 10%;
-    text-align: left;
     font: normal normal bold 59px/57px Arial;
-    letter-spacing: 0px;
-    opacity: 1;
-    color: #ffffff;
-}
-.AboutText {
-    color: var(--unnamed-color-ffffff);
-    text-align: left;
-    font: normal normal normal 19px/25px Arial;
-    letter-spacing: 0px;
-    color: #ffffff;
-    opacity: 1;
 }
 .AboutIcons {
     @include breakpoint($breakpoint-medium-landscape) {
@@ -50,42 +37,26 @@
 .AboutIconFb {
     width: 14px;
     height: 27px;
-    background: var(--unnamed-color-657ee4) 0% 0% no-repeat padding-box;
-    opacity: 1;
 }
 .AboutIconTw {
     width: 27px;
     height: 22px;
-    background: var(--unnamed-color-657ee4) 0% 0% no-repeat padding-box;
-    opacity: 1;
 }
 .AboutIconIg {
     width: 25px;
     height: 23px;
-    background: var(--unnamed-color-657ee4) 0% 0% no-repeat padding-box;
-    opacity: 1;
 }
 .AboutIconMd {
     width: 23px;
     height: 23px;
-    background: var(--unnamed-color-657ee4) 0% 0% no-repeat padding-box;
-    opacity: 1;
 }
 .AboutIconRd {
     width: 22px;
     height: 23px;
-    background: var(--unnamed-color-657ee4) 0% 0% no-repeat padding-box;
-    opacity: 1;
 }
 .AboutPicture {
-    width: 50%;
     height: 768px;
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
-
-    @include breakpoint($breakpoint-small) {
-        width: 100%;
-        // display: none;
-    }
 }

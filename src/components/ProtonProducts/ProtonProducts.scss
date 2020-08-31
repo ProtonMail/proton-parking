@@ -1,10 +1,7 @@
 .ProtonProducts {
     height: 626px;
-    background: var(--unnamed-color-657ee4) 0% 0% no-repeat padding-box;
-    background: 0% 0% no-repeat padding-box;
     opacity: 1;
     @include breakpoint($breakpoint-small) {
-        // top: 0px;
         height: 651px;
     }
 }
@@ -14,7 +11,6 @@
     height: 40px;
     left: 0;
     right: 0;
-    opacity: 1;
     position: absolute;
     @include breakpoint($breakpoint-small) {
         top: 145px;
@@ -26,12 +22,10 @@
     right: 0;
     width: 340px;
     height: 46px;
-    color: var(--unnamed-color-ffffff);
     text-align: center;
     font: normal normal normal 19px/25px Arial;
     letter-spacing: 0px;
-    color: #ffffff;
-    opacity: 1;
+    color: $white;
     position: absolute;
     @include breakpoint($breakpoint-small) {
         top: 258px;
@@ -45,14 +39,13 @@
     right: 0;
     width: 208px;
     height: 57px;
-    border: 2px solid var(--unnamed-color-ffffff);
-    border: 2px solid #ffffff;
+    border: 2px solid $white;
     opacity: 1;
     position: absolute;
     display: flex;
     justify-content: center;
     align-items: center;
-    color: #ffffff;
+    color: $white;
     font: normal normal normal 19px/25px Arial;
     cursor: pointer;
     @include breakpoint($breakpoint-small) {
@@ -67,8 +60,6 @@
     right: 0;
     width: 510px;
     height: 299px;
-    background: transparent 0% 0% no-repeat padding-box;
-    opacity: 1;
     position: absolute;
     @include breakpoint($breakpoint-small) {
         top: 505px;

@@ -1,20 +1,14 @@
 .WelcomeProton {
     height: 768px;
-    background: #272b35 0% 0% no-repeat padding-box;
-    opacity: 1;
     position: relative;
     @include breakpoint($breakpoint-small) {
         left: 0px;
         height: 870px;
-        background: #272b35 0% 0% no-repeat padding-box;
-        opacity: 1;
     }
 }
 .WelcomeProtonTitle {
     font: normal normal bold 59px/57px Arial;
-    letter-spacing: 0px;
-    opacity: 1;
-    color: #ffffff;
+    color: $white;
     margin-top: 102px;
     padding-right: 10%;
     padding-left: 20%;
@@ -29,12 +23,7 @@
     }
 }
 .WelcomeProtonDesc {
-    color: var(--unnamed-color-ffffff);
-    text-align: left;
-    font: normal normal normal 19px/25px Arial;
-    letter-spacing: 0px;
-    color: #ffffff;
-    opacity: 1;
+    color: $white;
     padding-right: 258px;
     padding-left: 139px;
     @include breakpoint($breakpoint-medium-landscape) {
@@ -117,7 +106,6 @@
     left: 139px;
     width: 14px;
     height: 27px;
-    background: var(--unnamed-color-657ee4) 0% 0% no-repeat padding-box;
     opacity: 1;
     position: absolute;
     @include breakpoint($breakpoint-medium-landscape) {
@@ -128,9 +116,6 @@
         left: 41px;
         width: 12px;
         height: 23px;
-        background: var(--unnamed-color-657ee4) 0% 0% no-repeat padding-box;
-        opacity: 1;
-        position: absolute;
     }
 }
 .IconTw {
@@ -138,8 +123,6 @@
     left: 186px;
     width: 27px;
     height: 22px;
-    background: var(--unnamed-color-657ee4) 0% 0% no-repeat padding-box;
-    opacity: 1;
     position: absolute;
     @include breakpoint($breakpoint-medium-landscape) {
         left: 12%;
@@ -149,8 +132,6 @@
         left: 82px;
         width: 23px;
         height: 19px;
-        background: var(--unnamed-color-657ee4) 0% 0% no-repeat padding-box;
-        opacity: 1;
         position: absolute;
     }
 }
@@ -159,8 +140,6 @@
     left: 302px;
     width: 23px;
     height: 23px;
-    background: var(--unnamed-color-657ee4) 0% 0% no-repeat padding-box;
-    opacity: 1;
     position: absolute;
     @include breakpoint($breakpoint-medium-landscape) {
         left: 24%;
@@ -170,9 +149,6 @@
         left: 133px;
         width: 22px;
         height: 20px;
-        background: var(--unnamed-color-657ee4) 0% 0% no-repeat padding-box;
-        opacity: 1;
-        position: absolute;
     }
 }
 .IconMd {
@@ -180,8 +156,6 @@
     left: 358px;
     width: 22px;
     height: 23px;
-    background: var(--unnamed-color-657ee4) 0% 0% no-repeat padding-box;
-    opacity: 1;
     position: absolute;
     @include breakpoint($breakpoint-medium-landscape) {
         left: 35%;
@@ -191,9 +165,6 @@
         left: 183px;
         width: 20px;
         height: 20px;
-        background: var(--unnamed-color-657ee4) 0% 0% no-repeat padding-box;
-        opacity: 1;
-        position: absolute;
     }
 }
 .IconRd {
@@ -201,8 +172,6 @@
     left: 245px;
     width: 25px;
     height: 23px;
-    background: var(--unnamed-color-657ee4) 0% 0% no-repeat padding-box;
-    opacity: 1;
     position: absolute;
     @include breakpoint($breakpoint-medium-landscape) {
         left: 47%;
@@ -212,8 +181,5 @@
         left: 232px;
         width: 19px;
         height: 20px;
-        background: var(--unnamed-color-657ee4) 0% 0% no-repeat padding-box;
-        opacity: 1;
-        position: absolute;
     }
 }
