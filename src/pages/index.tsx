@@ -67,40 +67,37 @@ export default function Home() {
     const [widthh, setWidth] = useState(0)
 
     useEffect(() => {
-      const updateWindowDimensions = () => {
-        const newHeight = window.innerWidth
-        setWidth(newHeight)
-        console.log('updating height')
-      }
+        const updateWindowDimensions = () => {
+            const newHeight = window.innerWidth
+            setWidth(newHeight)
+        }
 
-      window.addEventListener('resize', updateWindowDimensions)
+        window.addEventListener('resize', updateWindowDimensions)
 
-      return () => window.removeEventListener('resize', updateWindowDimensions)
+        return () => window.removeEventListener('resize', updateWindowDimensions)
     }, [])
-
-    console.log('give height', widthh)
 
     const handleRadioChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         setChecked(e.target.value)
     }
 
-    // useEffect(() => {
-    //     const interval = setInterval(() => {
-    //         const previousChecked = checkedRef.current
-    //         const indexToCheck =
-    //             listOfPages.indexOf(previousChecked) + 1 === listOfPages.length
-    //                 ? 0
-    //                 : listOfPages.indexOf(previousChecked) + 1
-    //         const item = listOfPages[indexToCheck]
-    //         setChecked(item)
-    //     }, 5000)
-    //     return () => clearInterval(interval)
-    // }, [])
+    useEffect(() => {
+        const interval = setInterval(() => {
+            const previousChecked = checkedRef.current
+            const indexToCheck =
+                listOfPages.indexOf(previousChecked) + 1 === listOfPages.length
+                    ? 0
+                    : listOfPages.indexOf(previousChecked) + 1
+            const item = listOfPages[indexToCheck]
+            setChecked(item)
+        }, 5000)
+        return () => clearInterval(interval)
+    }, [])
 
     return (
         <div>
             {checked === 'about' ? (
-                <AboutProton />
+                <AboutProton windowSize={widthh} />
             ) : (
                 <div className='main-container flex'>
                     <WelcomeProton />
@@ -115,7 +112,7 @@ export default function Home() {
             )}
             <div
                 className='select-product flex flex-column absolute'
-                style={{ top: checked === 'about' && widthh <= 680 ? '320px': ''}}
+                style={{ top: checked === 'about' && widthh <= 680 ? '320px' : '' }}
             >
                 {listOfPages.map((page) => {
                     return (

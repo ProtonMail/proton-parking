@@ -1,5 +1,3 @@
-
-
 .about-proton {
     @include respond-to($breakpoint-small) {
         flex-direction: column;
@@ -10,7 +8,9 @@
     height: 768px;
     @include respond-to($breakpoint-small) {
         width: 100%;
-        background-image: url(require('../../../public/mountain-overlay.jpg'));
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
     }
 }
 .about-content {

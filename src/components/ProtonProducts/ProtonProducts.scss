@@ -23,7 +23,7 @@
     width: 340px;
     height: 46px;
     text-align: center;
-    
+
     color: $white;
     position: absolute;
     @include respond-to($breakpoint-small) {

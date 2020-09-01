@@ -8,10 +8,17 @@ import IconRd from '../../pictures/icon-rd.svg'
 // import Mountain from '../../pictures/mountain.jpg'
 import MountainOverlay from '../../pictures/mountain-overlay.jpg'
 
-export default function AboutProton() {
+interface Props {
+    windowSize: number
+}
+
+export default function AboutProton(props: Props) {
     return (
         <div className='about-proton flex relative'>
-            <div className='about-container flex bg-global-grey'>
+            <div
+                className='about-container flex bg-global-grey'
+                style={{ backgroundImage: props.windowSize <= 680 ? `url(${MountainOverlay})` : '' }}
+            >
                 <div className='w70 mauto about-content'>
                     <h2 className='about-title'>
                         About <span className='color-pm-blue'>Proton</span>
@@ -40,8 +47,10 @@ export default function AboutProton() {
                     </div>
                 </div>
             </div>
-            <div className='about-picture onmobile-w100 w50' style={{ backgroundImage: `url(${MountainOverlay})` }}>
-            </div>
+            <div
+                className='about-picture onmobile-w100 w50'
+                style={{ backgroundImage: `url(${MountainOverlay})` }}
+            ></div>
         </div>
     )
 }

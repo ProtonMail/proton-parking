@@ -2,7 +2,6 @@
     height: 768px;
     position: relative;
     @include respond-to($breakpoint-small) {
-
         height: 870px;
     }
 }
