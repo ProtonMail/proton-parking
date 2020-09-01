@@ -41,7 +41,6 @@ export default function AboutProton() {
                 </div>
             </div>
             <div className='about-picture onmobile-w100 w50' style={{ backgroundImage: `url(${MountainOverlay})` }}>
-                {/* <img src={MountainOverlay} className='w100 h100' /> */}
             </div>
         </div>
     )

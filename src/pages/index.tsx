@@ -1,4 +1,3 @@
-// import { useI18next, Trans } from 'gatsby-plugin-react-i18next'
 import React, { useState, useEffect, useRef } from 'react'
 import './layout.scss'
 import WelcomeProton from '../components/WelcomeProton/WelcomeProton'
@@ -12,6 +11,7 @@ import LogoMail from '../pictures/logo-mail.svg'
 import LogoCalendar from '../pictures/logo-cal.svg'
 import LogoDrive from '../pictures/logo-drive.svg'
 import LogoVPN from '../pictures/logo-vpn.svg'
+// import { t } from 'ttag'
 
 interface Property {
     pic: string
@@ -62,63 +62,43 @@ export default function Home() {
         },
     }
     const [checked, setChecked] = useState('mail')
-    // const [about, setAbout] = useState(true)
     const checkedRef = useRef(checked)
     checkedRef.current = checked
-    // const [widthh, setWidth] = useState(0)
+    const [widthh, setWidth] = useState(0)
 
-    // useEffect(() => {
-    //   const updateWindowDimensions = () => {
-    //     const newHeight = window.innerWidth
-    //     setWidth(newHeight)
-    //     console.log('updating height')
-    //   }
+    useEffect(() => {
+      const updateWindowDimensions = () => {
+        const newHeight = window.innerWidth
+        setWidth(newHeight)
+        console.log('updating height')
+      }
 
-    //   window.addEventListener('resize', updateWindowDimensions)
+      window.addEventListener('resize', updateWindowDimensions)
 
-    //   return () => window.removeEventListener('resize', updateWindowDimensions)
-    // }, [])
+      return () => window.removeEventListener('resize', updateWindowDimensions)
+    }, [])
 
-    // console.log('give height', widthh)
+    console.log('give height', widthh)
 
     const handleRadioChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         setChecked(e.target.value)
     }
 
-    useEffect(() => {
-        const interval = setInterval(() => {
-            const previousChecked = checkedRef.current
-            const indexToCheck =
-                listOfPages.indexOf(previousChecked) + 1 === listOfPages.length
-                    ? 0
-                    : listOfPages.indexOf(previousChecked) + 1
-            const item = listOfPages[indexToCheck]
-            setChecked(item)
-        }, 5000)
-        return () => clearInterval(interval)
-    }, [])
-
-    // const { languages, changeLanguage } = useI18next();
+    // useEffect(() => {
+    //     const interval = setInterval(() => {
+    //         const previousChecked = checkedRef.current
+    //         const indexToCheck =
+    //             listOfPages.indexOf(previousChecked) + 1 === listOfPages.length
+    //                 ? 0
+    //                 : listOfPages.indexOf(previousChecked) + 1
+    //         const item = listOfPages[indexToCheck]
+    //         setChecked(item)
+    //     }, 5000)
+    //     return () => clearInterval(interval)
+    // }, [])
 
     return (
         <div>
-            {/* <ul className='languages'>
-        {languages.map((lng) => (
-          <li key={lng}>
-            <a
-              href='#'
-              onClick={(e) => {
-                console.log('what')
-                console.log(lng)
-                e.preventDefault()
-                changeLanguage(lng)
-              }}
-            >
-              {lng}
-            </a>
-          </li>
-        ))}
-      </ul> */}
             {checked === 'about' ? (
                 <AboutProton />
             ) : (
@@ -135,7 +115,7 @@ export default function Home() {
             )}
             <div
                 className='select-product flex flex-column absolute'
-                // style={{ top: checked === 'about'  ? '320px': '882px'}}
+                style={{ top: checked === 'about' && widthh <= 680 ? '320px': ''}}
             >
                 {listOfPages.map((page) => {
                     return (
