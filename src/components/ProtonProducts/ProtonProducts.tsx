@@ -1,5 +1,5 @@
 import React from 'react'
-import '../../pages/index.scss'
+import '../../pages/layout.scss'
 
 interface Props {
     color: string
@@ -11,9 +11,14 @@ interface Props {
 
 function ProotonProducts(props: Props) {
     return (
-        <div className='protonProducts w50 relative onmobile-w100 ' style={{ backgroundColor: props.color }}>
+        <div
+            className='protonProducts w50 relative onmobile-w100 '
+            style={{
+                backgroundImage: `linear-gradient(to bottom, ${props.color} 0%, ${props.color} 75%, #fff 75% , #fff 100%)`,
+            }}
+        >
             <h2>
-                <img className='protonProducts-logo mrauto mlauto ' src={props.logo} alt='' />
+                <img className='protonProducts-logo mrauto mlauto w100' src={props.logo} alt='' />
             </h2>
             <p className='protonProducts-text mrauto mlauto '>{props.text}</p>
             <a className='protonProducts-button'>{props.button}</a>

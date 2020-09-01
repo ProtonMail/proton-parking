@@ -1,36 +1,35 @@
 .about-proton {
-    @include breakpoint($breakpoint-small) {
+    @include respond-to($breakpoint-small) {
         flex-direction: column;
     }
 }
 .about-container {
     width: 50%;
     height: 768px;
-    @include breakpoint($breakpoint-small) {
+    @include respond-to($breakpoint-small) {
         width: 100%;
     }
 }
 .about-content {
-    @include breakpoint($breakpoint-medium-landscape) {
+    @include respond-to($breakpoint-medium-landscape) {
         width: 80%;
     }
-    @include breakpoint($breakpoint-small) {
+    @include respond-to($breakpoint-small) {
         position: absolute;
         bottom: 3%;
         left: 3%;
         width: 90%;
     }
 }
-
 .about-title {
     margin-bottom: 10%;
     font: normal normal bold 59px/57px Arial;
 }
 .about-icons {
-    @include breakpoint($breakpoint-medium-landscape) {
+    @include respond-to($breakpoint-medium-landscape) {
         width: 70%;
     }
-    @include breakpoint($breakpoint-small) {
+    @include respond-to($breakpoint-small) {
         width: 50%;
     }
 }

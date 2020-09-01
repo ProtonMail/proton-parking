@@ -1,5 +1,5 @@
 import React from 'react'
-import '../../pages/index.scss'
+import '../../pages/layout.scss'
 import IconFb from '../../pictures/icon-fb.svg'
 import IconTw from '../../pictures/icon-tw.svg'
 import IconIg from '../../pictures/icon-ig.svg'
@@ -24,21 +24,21 @@ function WelcomeProton() {
 
             <div className='flex pt2 pl2 LinksCustom'>
                 <a href='https://www.facebook.com/ProtonMail' target='_Blank'>
-                    <img className='IconFb' src={IconFb} alt='' />
+                    <img className='IconFb' src={IconFb} alt='Proton on Facebook' />
                 </a>
                 <a href='' target='_Blank'>
-                    <img className='IconTw' src={IconTw} alt='' />
-                </a>
-                <a href='' target='_Blank'>
-                    {' '}
-                    <img className='IconIg' src={IconIg} alt='' />
+                    <img className='IconTw' src={IconTw} alt='Proton on Twitter' />
                 </a>
                 <a href='' target='_Blank'>
                     {' '}
-                    <img className='IconMd' src={IconMd} alt='' />
+                    <img className='IconIg' src={IconIg} alt='Proton on Instagram' />
                 </a>
                 <a href='' target='_Blank'>
-                    <img className='IconRd' src={IconRd} alt='' />
+                    {' '}
+                    <img className='IconMd' src={IconMd} alt='Proton on Mastodon' />
+                </a>
+                <a href='' target='_Blank'>
+                    <img className='IconRd' src={IconRd} alt='Proton on Reddit' />
                 </a>
             </div>
         </div>

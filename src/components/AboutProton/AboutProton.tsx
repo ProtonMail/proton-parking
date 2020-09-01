@@ -1,11 +1,11 @@
 import React from 'react'
-import '../../pages/index.scss'
+import '../../pages/layout.scss'
 import IconFb from '../../pictures/icon-fb.svg'
 import IconTw from '../../pictures/icon-tw.svg'
 import IconIg from '../../pictures/icon-ig.svg'
 import IconMd from '../../pictures/icon-md.svg'
 import IconRd from '../../pictures/icon-rd.svg'
-import Mountain from '../../pictures/mountain.jpg'
+// import Mountain from '../../pictures/mountain.jpg'
 import MountainOverlay from '../../pictures/mountain-overlay.jpg'
 
 export default function AboutProton() {
@@ -21,21 +21,21 @@ export default function AboutProton() {
                     </p>
                     <div className='flex flex-spacebetween w50 about-icons'>
                         <a href='https://www.facebook.com/ProtonMail' target='_Blank'>
-                            <img className='AboutIconFb' src={IconFb} alt='' />
+                            <img className='AboutIconFb' src={IconFb} alt='Proton on Facebook' />
                         </a>
                         <a href='' target='_Blank'>
-                            <img className='AboutIconTw' src={IconTw} alt='' />
-                        </a>
-                        <a href='' target='_Blank'>
-                            {' '}
-                            <img className='AboutIconIg' src={IconIg} alt='' />
+                            <img className='AboutIconTw' src={IconTw} alt='Proton on Twitter' />
                         </a>
                         <a href='' target='_Blank'>
                             {' '}
-                            <img className='AboutIconMd' src={IconMd} alt='' />
+                            <img className='AboutIconIg' src={IconIg} alt='Proton on Instagram' />
                         </a>
                         <a href='' target='_Blank'>
-                            <img className='AboutIconRd' src={IconRd} alt='' />
+                            {' '}
+                            <img className='AboutIconMd' src={IconMd} alt='Proton on Mastodon' />
+                        </a>
+                        <a href='' target='_Blank'>
+                            <img className='AboutIconRd' src={IconRd} alt='Proton on Reddit' />
                         </a>
                     </div>
                 </div>

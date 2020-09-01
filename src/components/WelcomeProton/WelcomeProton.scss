@@ -1,7 +1,7 @@
 .welcomeProton {
     height: 768px;
     position: relative;
-    @include breakpoint($breakpoint-small) {
+    @include respond-to($breakpoint-small) {
 
         height: 870px;
     }
@@ -12,11 +12,11 @@
     margin-top: 102px;
     padding-right: 10%;
     padding-left: 20%;
-    @include breakpoint($breakpoint-medium-landscape) {
+    @include respond-to($breakpoint-medium-landscape) {
         padding-right: 5%;
         padding-left: 6%;
     }
-    @include breakpoint($breakpoint-small) {
+    @include respond-to($breakpoint-small) {
         margin-top: 222px;
         padding-right: 5%;
         padding-left: 10%;
@@ -26,11 +26,11 @@
     color: $white;
     padding-right: 258px;
     padding-left: 139px;
-    @include breakpoint($breakpoint-medium-landscape) {
+    @include respond-to($breakpoint-medium-landscape) {
         padding-right: 5%;
         padding-left: 6%;
     }
-    @include breakpoint($breakpoint-small) {
+    @include respond-to($breakpoint-small) {
         top: 401px;
         left: 40px;
         padding: 0;
@@ -41,16 +41,14 @@
 }
 .welcomeProton-text {
     text-align: left;
-    font: normal normal bold $base-font Arial;
     color: $white;
-    opacity: 1;
     padding-right: 106px;
     padding-left: 139px;
-    @include breakpoint($breakpoint-medium-landscape) {
+    @include respond-to($breakpoint-medium-landscape) {
         padding-right: 5%;
         padding-left: 4%;
     }
-    @include breakpoint($breakpoint-small) {
+    @include respond-to($breakpoint-small) {
         top: 503px;
         left: 6%;
         position: absolute;
@@ -64,7 +62,7 @@
     top: 488px;
     left: 139px;
     position: absolute;
-    @include breakpoint($breakpoint-small) {
+    @include respond-to($breakpoint-small) {
         top: 717px;
         left: 48px;
         width: 0px;
@@ -80,7 +78,7 @@
     position: absolute;
     top: 482px;
     left: 208px;
-    @include breakpoint($breakpoint-small) {
+    @include respond-to($breakpoint-small) {
         display: inline-block;
         border-top: 3px solid $white;
         border-right: 3px solid $white;
@@ -94,7 +92,7 @@
 }
 .arrow-right {
     transform: rotate(45deg);
-    @include breakpoint($breakpoint-small) {
+    @include respond-to($breakpoint-small) {
         transform: rotate(135deg);
     }
 }
@@ -106,10 +104,10 @@
     height: 27px;
     opacity: 1;
     position: absolute;
-    @include breakpoint($breakpoint-medium-landscape) {
+    @include respond-to($breakpoint-medium-landscape) {
         left: 6%;
     }
-    @include breakpoint($breakpoint-small) {
+    @include respond-to($breakpoint-small) {
         top: 40px;
         left: 41px;
         width: 12px;
@@ -122,10 +120,10 @@
     width: 27px;
     height: 22px;
     position: absolute;
-    @include breakpoint($breakpoint-medium-landscape) {
+    @include respond-to($breakpoint-medium-landscape) {
         left: 12%;
     }
-    @include breakpoint($breakpoint-small) {
+    @include respond-to($breakpoint-small) {
         top: 42px;
         left: 82px;
         width: 23px;
@@ -139,10 +137,10 @@
     width: 23px;
     height: 23px;
     position: absolute;
-    @include breakpoint($breakpoint-medium-landscape) {
+    @include respond-to($breakpoint-medium-landscape) {
         left: 24%;
     }
-    @include breakpoint($breakpoint-small) {
+    @include respond-to($breakpoint-small) {
         top: 41px;
         left: 133px;
         width: 22px;
@@ -155,10 +153,10 @@
     width: 22px;
     height: 23px;
     position: absolute;
-    @include breakpoint($breakpoint-medium-landscape) {
+    @include respond-to($breakpoint-medium-landscape) {
         left: 35%;
     }
-    @include breakpoint($breakpoint-small) {
+    @include respond-to($breakpoint-small) {
         top: 41px;
         left: 183px;
         width: 20px;
@@ -171,10 +169,10 @@
     width: 25px;
     height: 23px;
     position: absolute;
-    @include breakpoint($breakpoint-medium-landscape) {
+    @include respond-to($breakpoint-medium-landscape) {
         left: 47%;
     }
-    @include breakpoint($breakpoint-small) {
+    @include respond-to($breakpoint-small) {
         top: 41px;
         left: 232px;
         width: 19px;

@@ -1,6 +1,6 @@
 // import { useI18next, Trans } from 'gatsby-plugin-react-i18next'
 import React, { useState, useEffect, useRef } from 'react'
-import './index.scss'
+import './layout.scss'
 import WelcomeProton from '../components/WelcomeProton/WelcomeProton'
 import ProtonProducts from '../components/ProtonProducts/ProtonProducts'
 import AboutProton from '../components/AboutProton/AboutProton'
@@ -85,18 +85,18 @@ export default function Home() {
         setChecked(e.target.value)
     }
 
-    // useEffect(() => {
-    //     const interval = setInterval(() => {
-    //         const previousChecked = checkedRef.current
-    //         const indexToCheck =
-    //             listOfPages.indexOf(previousChecked) + 1 === listOfPages.length
-    //                 ? 0
-    //                 : listOfPages.indexOf(previousChecked) + 1
-    //         const item = listOfPages[indexToCheck]
-    //         setChecked(item)
-    //     }, 5000)
-    //     return () => clearInterval(interval)
-    // }, [])
+    useEffect(() => {
+        const interval = setInterval(() => {
+            const previousChecked = checkedRef.current
+            const indexToCheck =
+                listOfPages.indexOf(previousChecked) + 1 === listOfPages.length
+                    ? 0
+                    : listOfPages.indexOf(previousChecked) + 1
+            const item = listOfPages[indexToCheck]
+            setChecked(item)
+        }, 5000)
+        return () => clearInterval(interval)
+    }, [])
 
     // const { languages, changeLanguage } = useI18next();
 

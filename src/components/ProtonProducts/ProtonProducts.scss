@@ -1,8 +1,8 @@
 .protonProducts {
-    height: 626px;
+    height: 768px;
     opacity: 1;
-    @include breakpoint($breakpoint-small) {
-        height: 651px;
+    @include respond-to($breakpoint-small) {
+        height: 870px;
     }
 }
 .protonProducts-logo {
@@ -12,7 +12,7 @@
     left: 0;
     right: 0;
     position: absolute;
-    @include breakpoint($breakpoint-small) {
+    @include respond-to($breakpoint-small) {
         top: 145px;
     }
 }
@@ -23,15 +23,15 @@
     width: 340px;
     height: 46px;
     text-align: center;
-    font: normal normal normal 19px/25px Arial;
+    
     color: $white;
     position: absolute;
-    @include breakpoint($breakpoint-small) {
+    @include respond-to($breakpoint-small) {
         top: 258px;
     }
 }
 .protonProducts-button {
-    top: 290px;
+    top: 310px;
     margin-left: auto;
     margin-right: auto;
     left: 0;
@@ -39,15 +39,13 @@
     width: 208px;
     height: 57px;
     border: 2px solid $white;
-    opacity: 1;
     position: absolute;
     display: flex;
     justify-content: center;
     align-items: center;
     color: $white;
-    font: normal normal normal 19px/25px Arial;
     cursor: pointer;
-    @include breakpoint($breakpoint-small) {
+    @include respond-to($breakpoint-small) {
         top: 376px;
     }
 }
@@ -60,17 +58,17 @@
     width: 510px;
     height: 299px;
     position: absolute;
-    @include breakpoint($breakpoint-small) {
+    @include respond-to($breakpoint-small) {
         top: 505px;
         width: 374px;
         height: 219px;
     }
-    @include breakpoint($breakpoint-medium-landscape) {
+    @include respond-to($breakpoint-medium-landscape) {
         top: 505px;
         width: 374px;
         height: 219px;
     }
-    @include breakpoint($breakpoint-medium) {
+    @include respond-to($breakpoint-medium) {
         top: 505px;
         width: 320px;
         height: 219px;
