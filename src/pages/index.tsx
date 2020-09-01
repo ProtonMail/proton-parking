@@ -64,7 +64,7 @@ export default function Home() {
     const [checked, setChecked] = useState('mail')
     const checkedRef = useRef(checked)
     checkedRef.current = checked
-    const [widthh, setWidth] = useState(0)
+    const [windowWidth, setWidth] = useState(window.innerWidth)
 
     useEffect(() => {
         const updateWindowDimensions = () => {
@@ -97,7 +97,7 @@ export default function Home() {
     return (
         <div>
             {checked === 'about' ? (
-                <AboutProton windowSize={widthh} />
+                <AboutProton windowSize={windowWidth} />
             ) : (
                 <div className='main-container flex'>
                     <WelcomeProton />
@@ -112,7 +112,7 @@ export default function Home() {
             )}
             <div
                 className='select-product flex flex-column absolute'
-                style={{ top: checked === 'about' && widthh <= 680 ? '320px' : '' }}
+                style={{ top: checked === 'about' && windowWidth <= 680 ? '320px' : '' }}
             >
                 {listOfPages.map((page) => {
                     return (
