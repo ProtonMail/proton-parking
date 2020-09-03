@@ -27,21 +27,21 @@ export default function AboutProton(props: Props) {
                         We believe universal access to privacy and security makes the world a better place.
                     </p>
                     <div className='flex flex-spacebetween w50 about-icons'>
-                        <a href='https://www.facebook.com/ProtonMail' target='_Blank'>
+                        <a href='https://www.facebook.com/ProtonMail' target='_blank'>
                             <img className='AboutIconFb' src={IconFb} alt='Proton on Facebook' />
                         </a>
-                        <a href='' target='_Blank'>
+                        <a href='' target='_blank'>
                             <img className='AboutIconTw' src={IconTw} alt='Proton on Twitter' />
                         </a>
-                        <a href='' target='_Blank'>
+                        <a href='' target='_blank'>
                             {' '}
                             <img className='AboutIconIg' src={IconIg} alt='Proton on Instagram' />
                         </a>
-                        <a href='' target='_Blank'>
+                        <a href='' target='_blank'>
                             {' '}
                             <img className='AboutIconMd' src={IconMd} alt='Proton on Mastodon' />
                         </a>
-                        <a href='' target='_Blank'>
+                        <a href='' target='_blank'>
                             <img className='AboutIconRd' src={IconRd} alt='Proton on Reddit' />
                         </a>
                     </div>

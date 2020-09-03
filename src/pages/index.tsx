@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react'
+
 import './layout.scss'
 import WelcomeProton from '../components/WelcomeProton/WelcomeProton'
 import ProtonProducts from '../components/ProtonProducts/ProtonProducts'
@@ -62,8 +63,9 @@ export default function Home() {
     }
     const [checked, setChecked] = useState('mail')
     const checkedRef = useRef(checked)
-    checkedRef.current = checked
     const [windowWidth, setWidth] = useState(window.innerWidth)
+
+    checkedRef.current = checked
 
     useEffect(() => {
         const updateWindowDimensions = () => {
@@ -79,19 +81,6 @@ export default function Home() {
     const handleRadioChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         setChecked(e.target.value)
     }
-
-    // useEffect(() => {
-    //     const interval = setInterval(() => {
-    //         const previousChecked = checkedRef.current
-    //         const indexToCheck =
-    //             listOfPages.indexOf(previousChecked) + 1 === listOfPages.length
-    //                 ? 0
-    //                 : listOfPages.indexOf(previousChecked) + 1
-    //         const item = listOfPages[indexToCheck]
-    //         setChecked(item)
-    //     }, 5000)
-    //     return () => clearInterval(interval)
-    // }, [])
 
     return (
         <div>
