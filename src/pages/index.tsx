@@ -11,7 +11,6 @@ import LogoMail from '../pictures/logo-mail.svg'
 import LogoCalendar from '../pictures/logo-cal.svg'
 import LogoDrive from '../pictures/logo-drive.svg'
 import LogoVPN from '../pictures/logo-vpn.svg'
-// import { t } from 'ttag'
 
 interface Property {
     pic: string
@@ -68,8 +67,8 @@ export default function Home() {
 
     useEffect(() => {
         const updateWindowDimensions = () => {
-            const newHeight = window.innerWidth
-            setWidth(newHeight)
+            const newWidth = window.innerWidth
+            setWidth(newWidth)
         }
 
         window.addEventListener('resize', updateWindowDimensions)
@@ -81,18 +80,18 @@ export default function Home() {
         setChecked(e.target.value)
     }
 
-    useEffect(() => {
-        const interval = setInterval(() => {
-            const previousChecked = checkedRef.current
-            const indexToCheck =
-                listOfPages.indexOf(previousChecked) + 1 === listOfPages.length
-                    ? 0
-                    : listOfPages.indexOf(previousChecked) + 1
-            const item = listOfPages[indexToCheck]
-            setChecked(item)
-        }, 5000)
-        return () => clearInterval(interval)
-    }, [])
+    // useEffect(() => {
+    //     const interval = setInterval(() => {
+    //         const previousChecked = checkedRef.current
+    //         const indexToCheck =
+    //             listOfPages.indexOf(previousChecked) + 1 === listOfPages.length
+    //                 ? 0
+    //                 : listOfPages.indexOf(previousChecked) + 1
+    //         const item = listOfPages[indexToCheck]
+    //         setChecked(item)
+    //     }, 5000)
+    //     return () => clearInterval(interval)
+    // }, [])
 
     return (
         <div>
@@ -119,7 +118,7 @@ export default function Home() {
                         <input
                             className='select-radioButton cursor-pointer'
                             type='radio'
-                            id='2'
+                            id={page}
                             name={page}
                             value={page}
                             key={page}

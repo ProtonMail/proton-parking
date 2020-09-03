@@ -53,49 +53,6 @@
         position: absolute;
     }
 }
-.ArrowLeft {
-    border: 2px solid $white;
-    opacity: 1;
-    width: 82px;
-    height: 0px;
-    top: 488px;
-    left: 139px;
-    position: absolute;
-    @include respond-to($breakpoint-small) {
-        top: 717px;
-        left: 48px;
-        width: 0px;
-        height: 113px;
-    }
-}
-.arrow {
-    display: inline-block;
-    width: 15px;
-    height: 15px;
-    border-top: 3px solid $white;
-    border-right: 3px solid $white;
-    position: absolute;
-    top: 482px;
-    left: 208px;
-    @include respond-to($breakpoint-small) {
-        display: inline-block;
-        border-top: 3px solid $white;
-        border-right: 3px solid $white;
-        position: absolute;
-        top: 816px;
-        left: 43px;
-        opacity: 1;
-        width: 15px;
-        height: 15px;
-    }
-}
-.arrow-right {
-    transform: rotate(45deg);
-    @include respond-to($breakpoint-small) {
-        transform: rotate(135deg);
-    }
-}
-
 .IconFb {
     top: 681px;
     left: 139px;
