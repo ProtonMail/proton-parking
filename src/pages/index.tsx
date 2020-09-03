@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react'
+
 import './layout.scss'
 import WelcomeProton from '../components/WelcomeProton/WelcomeProton'
 import ProtonProducts from '../components/ProtonProducts/ProtonProducts'
@@ -62,8 +63,9 @@ export default function Home() {
     }
     const [checked, setChecked] = useState('mail')
     const checkedRef = useRef(checked)
-    checkedRef.current = checked
     const [windowWidth, setWidth] = useState(window.innerWidth)
+
+    checkedRef.current = checked
 
     useEffect(() => {
         const updateWindowDimensions = () => {
