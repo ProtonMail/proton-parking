@@ -16,7 +16,7 @@ export default function AboutProton(props: Props) {
     return (
         <div className='about-proton flex relative'>
             <div
-                className='about-container flex bg-global-grey'
+                className='about-container flex bg-global-grey w50 onmobile-w100'
                 style={{ backgroundImage: props.windowSize <= 680 ? `url(${MountainOverlay})` : '' }}
             >
                 <div className='w70 mauto about-content'>
@@ -28,21 +28,21 @@ export default function AboutProton(props: Props) {
                     </p>
                     <div className='flex flex-spacebetween w50 about-icons'>
                         <a href='https://www.facebook.com/ProtonMail' target='_blank'>
-                            <img className='AboutIconFb' src={IconFb} alt='Proton on Facebook' />
+                            <img className='IconFb' src={IconFb} alt='Proton on Facebook' />
                         </a>
                         <a href='' target='_blank'>
-                            <img className='AboutIconTw' src={IconTw} alt='Proton on Twitter' />
+                            <img className='IconTw' src={IconTw} alt='Proton on Twitter' />
+                        </a>
+                        <a href='' target='_blank'>
+                            <img className='IconRd' src={IconRd} alt='Proton on Reddit' />
                         </a>
                         <a href='' target='_blank'>
                             {' '}
-                            <img className='AboutIconIg' src={IconIg} alt='Proton on Instagram' />
+                            <img className='IconIg' src={IconIg} alt='Proton on Instagram' />
                         </a>
                         <a href='' target='_blank'>
                             {' '}
-                            <img className='AboutIconMd' src={IconMd} alt='Proton on Mastodon' />
-                        </a>
-                        <a href='' target='_blank'>
-                            <img className='AboutIconRd' src={IconRd} alt='Proton on Reddit' />
+                            <img className='IconMd' src={IconMd} alt='Proton on Mastodon' />
                         </a>
                     </div>
                 </div>

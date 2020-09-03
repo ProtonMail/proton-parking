@@ -1,5 +1,4 @@
 import React, { useState, useEffect, useRef } from 'react'
-
 import './layout.scss'
 import WelcomeProton from '../components/WelcomeProton/WelcomeProton'
 import ProtonProducts from '../components/ProtonProducts/ProtonProducts'

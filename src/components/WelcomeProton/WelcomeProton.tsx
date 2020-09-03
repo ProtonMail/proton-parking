@@ -19,14 +19,18 @@ function WelcomeProton() {
             <p className='welcomeProton-text color-white'>
                 But check out these other products that respect your privacy and keep your data safe.
             </p>
-            <img className='' src={IconArrow} alt='' />
-
-            <div className='flex pt2 pl2 LinksCustom'>
+            <h2 className='arrow-right-custom'>
+                <img src={IconArrow} alt='' />
+            </h2>
+            <div className='flex welcome-icons w60 absolute flex-spacebetween' >
                 <a href='https://www.facebook.com/ProtonMail' target='_blank'>
                     <img className='IconFb' src={IconFb} alt='Proton on Facebook' />
                 </a>
                 <a href='' target='_blank'>
                     <img className='IconTw' src={IconTw} alt='Proton on Twitter' />
+                </a>
+                <a href='' target='_blank'>
+                    <img className='IconRd' src={IconRd} alt='Proton on Reddit' />
                 </a>
                 <a href='' target='_blank'>
                     {' '}
@@ -35,9 +39,6 @@ function WelcomeProton() {
                 <a href='' target='_blank'>
                     {' '}
                     <img className='IconMd' src={IconMd} alt='Proton on Mastodon' />
-                </a>
-                <a href='' target='_blank'>
-                    <img className='IconRd' src={IconRd} alt='Proton on Reddit' />
                 </a>
             </div>
         </div>

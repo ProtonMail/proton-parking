@@ -4,10 +4,8 @@
     }
 }
 .about-container {
-    width: 50%;
     height: 768px;
     @include respond-to($breakpoint-small) {
-        width: 100%;
         background-size: cover;
         background-position: center;
         background-repeat: no-repeat;
@@ -35,26 +33,6 @@
     @include respond-to($breakpoint-small) {
         width: 50%;
     }
-}
-.AboutIconFb {
-    width: 14px;
-    height: 27px;
-}
-.AboutIconTw {
-    width: 27px;
-    height: 22px;
-}
-.AboutIconIg {
-    width: 25px;
-    height: 23px;
-}
-.AboutIconMd {
-    width: 23px;
-    height: 23px;
-}
-.AboutIconRd {
-    width: 22px;
-    height: 23px;
 }
 .about-picture {
     height: 768px;

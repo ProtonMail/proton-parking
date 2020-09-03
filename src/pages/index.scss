@@ -9,6 +9,9 @@ body {
     @include respond-to($breakpoint-small) {
     }
 }
+html {
+    scroll-snap-type: y mandatory;
+}
 .select-product {
     right: 33px;
     top: 358px;

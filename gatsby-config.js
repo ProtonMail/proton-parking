@@ -10,6 +10,7 @@ module.exports = {
         title: 'Proton Parking Page',
     },
     plugins: [
+        `gatsby-plugin-scroll-reveal`,
         `gatsby-plugin-sass`,
         `gatsby-plugin-typescript`,
         {
@@ -27,8 +28,6 @@ module.exports = {
                 path: `${__dirname}/src/pictures/`,
             },
         },
-        `gatsby-plugin-sharp`,
-        `gatsby-transformer-sharp`,
         `gatsby-plugin-react-helmet`,
     ],
 }

@@ -9,7 +9,7 @@ module.exports = {
             'babel-plugin-ttag',
             {
                 resolve: {
-                    translations: LOCALE === 'es' ? 'i18n/es.po' : 'default',
+                    translations: LOCALE  ? `i18n/${LOCALE}.po`  : 'default',
                 },
             },
         ],
