@@ -1,32 +1,28 @@
 body {
-    margin: 0;
-    background-color: $white;
-    font-family: Arial;
+    // tiny trick to avoid managing overflow :)
+    background-image: linear-gradient(to right, #{$pm-global-grey} 0%, #{$pm-global-grey} 50%, $white 50% , $white 100%);
 }
-.main-container {
-    height: 768px;
-    background-color: $white;
-    @include respond-to($breakpoint-small) {
-    }
-}
-html {
-    scroll-snap-type: y mandatory;
-}
+
+$input-size: 1rem !default;
 .select-product {
-    right: 33px;
-    top: 358px;
     position: absolute;
-    opacity: 1;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+    
     @include respond-to($breakpoint-small) {
-        top: 882px;
-        right: 4%;
-        width: 10px;
+        top: calc(100vh + 10px);
+        transform: none;
+        right: 10px;
     }
+
 }
-.select-radioButton {
+label,
+input[type='radio'] {
     cursor: pointer;
 }
 input[type='radio'] {
-    width: 10px;
-    height: 10px;
+    width: $input-size;
+    height: $input-size;
+    margin-bottom: $input-size/2;
 }

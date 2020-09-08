@@ -1,81 +1,65 @@
 .welcomeProton {
-    height: 768px;
-    position: relative;
+    min-height: 100vh;
+    height: auto;
+    @include respond-to($breakpoint-tiny) {
+        padding: 1em;
+    }
+}
+.welcomeProton-inner {
+    padding-top: 10%;
+    max-width: rem(600);
     @include respond-to($breakpoint-small) {
-        height: 870px;
+        padding-top: 0;
     }
 }
 .welcomeProton-title {
-    font: normal normal bold 59px/57px Arial;
-    color: $white;
-    margin-top: 102px;
-    padding-right: 10%;
-    padding-left: 139px;
-    @include respond-to($breakpoint-medium-landscape) {
-        padding-right: 5%;
-        padding-left: 5%;
-    }
+    font-weight: bold;
+    max-width: 40rem;
+    line-height: 1;
     @include respond-to($breakpoint-small) {
-        margin-top: 222px;
+        padding-top: 1em;
     }
 }
-.welcomeProton-description {
-    color: $white;
-    padding-right: 258px;
-    padding-left: 139px;
-    @include respond-to($breakpoint-medium-landscape) {
-        padding-right: 5%;
-        padding-left: 5%;
+.arrow-right-custom-container {
+    @include respond-to($breakpoint-small) {
+        min-height: 83px; // enough space for handling rotation ^^
     }
-}
-.welcomeProton-text {
-    text-align: left;
-    color: $white;
-    padding-right: 106px;
-    padding-left: 139px;
-    @include respond-to($breakpoint-medium-landscape) {
-        padding-right: 5%;
-        padding-left: 5%;
+    // fixes for really low height
+    @include respond-to(600, 'height') {
+        display: none;
     }
 }
 .arrow-right-custom {
-    padding-left: 139px;
-    @include respond-to($breakpoint-medium-landscape) {
-        padding-left: 5%;
-    }
     @include respond-to($breakpoint-small) {
-        transform: rotate(90deg);
-        position: absolute;
-        bottom: 40px;
+        transform: rotate(90deg) translateY(-16px);
+        transform-origin: 0;
     }
 }
 .welcome-icons {
-    padding-left: 139px;
-    bottom: 10%;
-    @include respond-to($breakpoint-medium-landscape) {
-        padding-left: 5%;
-    }
     @include respond-to($breakpoint-small) {
-        top: 5%;
+        order: -1;
     }
 }
+
+
+// meh
 .IconFb {
-    width: 14px;
-    height: 27px;
+    width: rem(14);
+    height: rem(27);
 }
 .IconTw {
-    width: 27px;
-    height: 22px;
+    width: rem(27);
+    height: rem(22);
 }
 .IconIg {
-    width: 23px;
-    height: 23px;
+    width: rem(23);
+    height: rem(23);
 }
 .IconMd {
-    width: 22px;
-    height: 23px;
+    width: rem(22);
+    height: rem(23);
 }
 .IconRd {
-    width: 25px;
-    height: 23px;
+    width: rem(25);
+    height: rem(23);
 }

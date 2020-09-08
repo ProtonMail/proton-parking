@@ -1,45 +1,31 @@
 import React from 'react'
 import '../../pages/layout.scss'
-import IconFb from '../../pictures/icon-fb.svg'
-import IconTw from '../../pictures/icon-tw.svg'
-import IconIg from '../../pictures/icon-ig.svg'
-import IconMd from '../../pictures/icon-md.svg'
-import IconRd from '../../pictures/icon-rd.svg'
+import '../SocialNetworks';
 import IconArrow from '../../pictures/arrow.svg'
+import SocialNetworks from '../SocialNetworks';
 
 function WelcomeProton() {
     return (
-        <div className='welcomeProton w50 flex flex-column onmobile-w100 relative bg-global-grey'>
-            <h1 className='welcomeProton-title color-white '>
-                Welcome to <span className='color-pm-blue'>Proton</span>
-            </h1>
-            <p className='welcomeProton-description color-white'>
-                You've arrived at a Proton product that doesn’t exist (yet).
-            </p>
-            <p className='welcomeProton-text color-white'>
-                But check out these other products that respect your privacy and keep your data safe.
-            </p>
-            <h2 className='arrow-right-custom'>
-                <img src={IconArrow} alt='' />
-            </h2>
-            <div className='flex welcome-icons w60 absolute flex-spacebetween' >
-                <a href='https://www.facebook.com/ProtonMail' target='_blank'>
-                    <img className='IconFb' src={IconFb} alt='Proton on Facebook' />
-                </a>
-                <a href='' target='_blank'>
-                    <img className='IconTw' src={IconTw} alt='Proton on Twitter' />
-                </a>
-                <a href='' target='_blank'>
-                    <img className='IconRd' src={IconRd} alt='Proton on Reddit' />
-                </a>
-                <a href='' target='_blank'>
-                    {' '}
-                    <img className='IconIg' src={IconIg} alt='Proton on Instagram' />
-                </a>
-                <a href='' target='_blank'>
-                    {' '}
-                    <img className='IconMd' src={IconMd} alt='Proton on Mastodon' />
-                </a>
+        <div className='welcomeProton w50 onmobile-w100 relative bg-global-grey p2'>
+            <div className="welcomeProton-inner flex-noMinChildren flex-column flex-nowrap h100 mlauto">
+                <h1 className='welcomeProton-title color-white flex-item-noshrink'>
+                    Welcome to <span className='color-pm-blue'>Proton</span>
+                </h1>
+                <div className="flex-item-fluid-auto">
+                    <p className='welcomeProton-description'>
+                        You've arrived at a Proton product that doesn’t exist (yet).
+                    </p>
+                    <p className='welcomeProton-text bold'>
+                        But check out these other products that respect your privacy and keep your data safe.
+                    </p>
+                    <div className='arrow-right-custom-container'>
+                        <div className='arrow-right-custom'>
+                            <img src={IconArrow} alt='' />
+                        </div>
+                    </div>
+                    
+                </div>
+                <SocialNetworks className="welcome-icons mtauto"/>
             </div>
         </div>
     )

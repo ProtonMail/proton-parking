@@ -1,10 +1,5 @@
-.about-proton {
-    @include respond-to($breakpoint-small) {
-        flex-direction: column;
-    }
-}
 .about-container {
-    height: 768px;
+    height: 100vh;
     @include respond-to($breakpoint-small) {
         background-size: cover;
         background-position: center;
@@ -12,34 +7,19 @@
     }
 }
 .about-content {
-    @include respond-to($breakpoint-medium-landscape) {
-        width: 80%;
-    }
     @include respond-to($breakpoint-small) {
         position: absolute;
-        bottom: 3%;
-        left: 3%;
-        width: 90%;
+        bottom: 0;
+        left: 0;
+        right: 0;
     }
 }
 .about-title {
     margin-bottom: 10%;
-    font: normal normal bold 59px/57px Arial;
-}
-.about-icons {
-    @include respond-to($breakpoint-medium-landscape) {
-        width: 70%;
-    }
-    @include respond-to($breakpoint-small) {
-        width: 50%;
-    }
+    line-height: 1;
 }
 .about-picture {
-    height: 768px;
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
-    @include respond-to($breakpoint-small) {
-        display: none;
-    }
 }

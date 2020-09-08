@@ -1,56 +1,44 @@
+$position-gradient: 75% !default;
+
 .protonProducts {
-    height: 768px;
-    opacity: 1;
+    background-image: linear-gradient(to bottom, var(--colorGradient, #{$pm-blue}) 0%, var(--colorGradient, #{$pm-blue}) #{$position-gradient}, #{$white} #{$position-gradient}, #{$white} 100%);
     @include respond-to($breakpoint-small) {
-        height: 870px;
+        min-height: 100vh;
+    }
+}
+.protonProducts-inner {
+    padding-top: 10%;
+    @include respond-to($breakpoint-small) {
+        padding-top: 5%;
     }
 }
 .protonProducts-logo {
-    top: 113px;
     width: 269px;
     height: 40px;
-    left: 0;
-    right: 0;
-    position: absolute;
-    @include respond-to($breakpoint-small) {
-        top: 145px;
-    }
 }
-.protonProducts-text {
-    top: 190px;
-    left: 0;
-    right: 0;
-    width: 340px;
-    height: 46px;
-    text-align: center;
 
-    color: $white;
-    position: absolute;
-    @include respond-to($breakpoint-small) {
-        top: 258px;
-    }
-}
 .protonProducts-button {
-    top: 310px;
-    margin-left: auto;
-    margin-right: auto;
-    left: 0;
-    right: 0;
-    width: 208px;
-    height: 57px;
-    border: 2px solid $white;
-    position: absolute;
+    width: 21rem;
+    height: 6rem;
+    border: 2px solid currentColor;
     display: flex;
     justify-content: center;
     align-items: center;
+    text-decoration: none;
     color: $white;
-    cursor: pointer;
-    @include respond-to($breakpoint-small) {
-        top: 376px;
+    &:focus,
+    &:hover,
+    &:active {
+        color: $black;
+        text-decoration: none;
+    }
+    @include respond-to($breakpoint-tiny) {
+        width: 18rem;
+        height: 5rem;
     }
 }
 .protonProducts-picture {
-    top: 416px;
+    top: calc(#{$position-gradient} - 150px); // gradient - half height of picture
     margin-left: auto;
     margin-right: auto;
     left: 0;
@@ -58,20 +46,35 @@
     width: 510px;
     height: 299px;
     position: absolute;
-    @include respond-to($breakpoint-small) {
-        top: 505px;
-        width: 374px;
-        height: 219px;
-    }
     @include respond-to($breakpoint-medium-landscape) {
-        top: 505px;
         width: 374px;
         height: 219px;
+        top: calc(#{$position-gradient} - 110px);
     }
     @include respond-to($breakpoint-medium) {
-        top: 505px;
         width: 320px;
         height: 219px;
-        margin-bottom: 146px;
+        top: calc(#{$position-gradient} - 110px);
     }
+    @include respond-to($breakpoint-small) {
+        width: 374px;
+        height: 219px;
+    }
+    @include respond-to($breakpoint-tiny) {
+        width: 250px;
+        height: 150px;
+        top: calc(#{$position-gradient} - 75px);
+    }
+    // fixes for really low height
+    @include respond-to(700, 'height') {
+        width: 320px;
+        height: 219px;
+        top: calc(#{$position-gradient} - 110px);
+    }
+    @include respond-to(600, 'height') {
+        width: 250px;
+        height: 150px;
+        top: calc(#{$position-gradient} - 75px);
+    }
+
 }

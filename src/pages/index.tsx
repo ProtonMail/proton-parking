@@ -14,10 +14,12 @@ import LogoVPN from '../pictures/logo-vpn.svg'
 
 interface Property {
     pic: string
+    title: string
     text: string
     logo: string
     color: string
     button: string
+    buttonUrl: string
 }
 
 interface AllProperties {
@@ -33,31 +35,39 @@ export default function Home() {
     const allProperties: AllProperties = {
         mail: {
             pic: PictureMail,
+            title: 'ProtonMail',
             text: 'Encrypted email that respects your privacy',
             logo: LogoMail,
             color: '#657ee4',
             button: 'Learn More',
+            buttonUrl: 'https://protonmail.com/'
         },
         vpn: {
             pic: PictureVPN,
+            title: 'ProtonVPN',
             text: 'High-speed VPN to access blocked content and secure your Internet connection',
             logo: LogoVPN,
             color: '#5FB364',
             button: 'Learn More',
+            buttonUrl: 'https://protonvpn.com/'
         },
         calendar: {
             pic: PictureCalendar,
+            title: 'ProtonCalendar',
             text: 'Encrypted calendar that keeps your plans private',
             logo: LogoCalendar,
             color: '#657EE4',
             button: 'Learn More',
+            buttonUrl: 'https://protonmail.com/blog/protoncalendar-beta-announcement/'
         },
         drive: {
             pic: PictureDrive,
+            title: 'ProtonDrive',
             text: 'Encrypted file storage on the cloud to store and backup your files safely',
             logo: LogoDrive,
             color: '#00C5B8',
             button: 'Coming Soon',
+            buttonUrl: 'https://protonmail.com/blog/protondrive-security/'
         },
     }
     const [checked, setChecked] = useState('mail')
@@ -90,6 +100,7 @@ export default function Home() {
                     <WelcomeProton />
                     <ProtonProducts
                         picture={allProperties[checked].pic}
+                        title={allProperties[checked].title}
                         logo={allProperties[checked].logo}
                         text={allProperties[checked].text}
                         color={allProperties[checked].color}
@@ -99,20 +110,29 @@ export default function Home() {
             )}
             <div
                 className='select-product flex flex-column absolute'
-                style={{ top: checked === 'about' && windowWidth <= 680 ? '320px' : '' }}
+                style={{ top: checked === 'about' && windowWidth <= 680 ? '10px' : '' }}
             >
                 {listOfPages.map((page) => {
+                    const radioText = allProperties[page] ? allProperties[page].title : 'About Proton';
                     return (
-                        <input
-                            className='select-radioButton cursor-pointer'
-                            type='radio'
-                            id={page}
-                            name={page}
-                            value={page}
-                            key={page}
-                            checked={checked === page}
-                            onChange={handleRadioChange}
-                        />
+                        <>
+                            <label 
+                                for={page}
+                                title={radioText}
+                                >
+                                <span className="sr-only">{radioText}</span>
+                                <input
+                                    className='select-radioButton cursor-pointer'
+                                    type='radio'
+                                    id={page}
+                                    name={page}
+                                    value={page}
+                                    key={page}
+                                    checked={checked === page}
+                                    onChange={handleRadioChange}
+                                />
+                            </label>
+                        </>
                     )
                 })}
             </div>
