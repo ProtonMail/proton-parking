@@ -15,9 +15,7 @@ function ProtonProducts(props: Props) {
     return (
         <div
             className='protonProducts w50 relative aligncenter p2 onmobile-w100'
-            style={{
-                '--colorGradient': props.color
-            }}
+            style={{ '--colorGradient': props.color }}
         >
             <div className="protonProducts-inner">
                 <h2 className='aligncenter mb2'>

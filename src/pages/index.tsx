@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react'
 import { graphql } from 'gatsby'
-import Img from 'gatsby-image'
+import Img, { FluidObject } from 'gatsby-image'
 
 import './layout.scss'
 import WelcomeProton from '../components/WelcomeProton/WelcomeProton'
@@ -29,7 +29,33 @@ interface AllProperties {
     drive: Property
 }
 
-export default function Home({ data }) {
+interface Props {
+    data: {
+        DPPM: {
+            childImageSharp: {
+                fluid: FluidObject;
+            }
+        }
+        DPPVPN: {
+            childImageSharp: {
+                fluid: FluidObject;
+            }
+        }
+        DPPC: {
+            childImageSharp: {
+                fluid: FluidObject;
+            }
+        }
+        DPPD: {
+            childImageSharp: {
+                fluid: FluidObject;
+            }
+        }
+    }
+    
+}
+
+export default function Home({ data }: Props) {
     const listOfPages: string[] = ['mail', 'vpn', 'calendar', 'drive', 'about']
     const allProperties: AllProperties = {
         mail: {
@@ -104,6 +130,7 @@ export default function Home({ data }) {
                         text={allProperties[checked].text}
                         color={allProperties[checked].color}
                         button={allProperties[checked].button}
+                        buttonUrl={allProperties[checked].buttonUrl}
                     />
                 </div>
             )}
@@ -116,7 +143,7 @@ export default function Home({ data }) {
                     return (
                         <>
                             <label 
-                                for={page}
+                                htmlFor={page}
                                 title={radioText}
                                 >
                                 <span className="sr-only">{radioText}</span>
@@ -143,28 +170,28 @@ export const query = graphql`
 {
     DPPC: file(relativePath: { eq: "DP-PC.png" }) {
         childImageSharp {
-            fluid(maxWidth: 510, quality: 70) {
+            fluid(maxWidth: 510, quality: 100) {
                 ...GatsbyImageSharpFluid_withWebp_tracedSVG
             }
         }
     }
     DPPD: file(relativePath: { eq: "DP-PD.png" }) {
         childImageSharp {
-            fluid(maxWidth: 510, quality: 70) {
+            fluid(maxWidth: 510, quality: 100) {
                 ...GatsbyImageSharpFluid_withWebp_tracedSVG
             }
         }
     }
     DPPM: file(relativePath: { eq: "DP-PM.png" }) {
         childImageSharp {
-            fluid(maxWidth: 510, quality: 70) {
+            fluid(maxWidth: 510, quality: 100) {
                 ...GatsbyImageSharpFluid_withWebp_tracedSVG
             }
         }
     }
     DPPVPN: file(relativePath: { eq: "DP-PVPN.png" }) {
         childImageSharp {
-            fluid(maxWidth: 510, quality: 70) {
+            fluid(maxWidth: 510, quality: 100) {
                 ...GatsbyImageSharpFluid_withWebp_tracedSVG
             }
         }
