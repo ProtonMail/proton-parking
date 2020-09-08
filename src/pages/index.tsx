@@ -71,13 +71,13 @@ export default function Home({ data }) {
     }
     const [checked, setChecked] = useState('mail')
     const checkedRef = useRef(checked)
-    const [windowWidth, setWidth] = useState(window.innerWidth)
+    const [windowWidth, setWidth] = useState(typeof window !== `undefined` ? window.innerWidth : 0)
 
     checkedRef.current = checked
 
     useEffect(() => {
         const updateWindowDimensions = () => {
-            const newWidth = window.innerWidth
+            const newWidth = typeof window !== `undefined` ? window.innerWidth : 0
             setWidth(newWidth)
         }
 
