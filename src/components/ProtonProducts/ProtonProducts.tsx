@@ -7,7 +7,7 @@ interface Props {
     logo: string
     button: string
     buttonUrl: string
-    picture: string
+    picture: React.ReactNode
     text: string
 }
 
@@ -26,7 +26,7 @@ function ProtonProducts(props: Props) {
                 <p className='protonProducts-text mb2'>{props.text}</p>
                 <a href={props.buttonUrl} className='protonProducts-button mlauto mrauto'>{props.button}</a>
                 <div className='protonProducts-picture'>
-                    <img src={props.picture} className='w100' alt='' loading="lazy" />
+                    {props.picture}
                 </div>
             </div>
             

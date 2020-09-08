@@ -1,9 +1,3 @@
-/**
- * Configure your Gatsby site with this file.
- *
- * See: https://www.gatsbyjs.org/docs/gatsby-config/
- */
-
 module.exports = {
     /* Your site config here */
     siteMetadata: {
@@ -25,9 +19,11 @@ module.exports = {
             resolve: `gatsby-source-filesystem`,
             options: {
                 name: `pictures`,
-                path: `${__dirname}/src/pictures/`,
+                path: `${__dirname}/src/pictures`,
             },
-        },
+          },
+        `gatsby-transformer-sharp`, 
+        `gatsby-plugin-sharp`,
         `gatsby-plugin-react-helmet`,
     ],
 }

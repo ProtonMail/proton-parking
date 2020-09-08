@@ -1,19 +1,18 @@
 import React, { useState, useEffect, useRef } from 'react'
+import { graphql } from 'gatsby'
+import Img from 'gatsby-image'
+
 import './layout.scss'
 import WelcomeProton from '../components/WelcomeProton/WelcomeProton'
 import ProtonProducts from '../components/ProtonProducts/ProtonProducts'
 import AboutProton from '../components/AboutProton/AboutProton'
-import PictureMail from '../pictures/DP-PM.png'
-import PictureVPN from '../pictures/DP-PVPN.png'
-import PictureCalendar from '../pictures/DP-PC.png'
-import PictureDrive from '../pictures/DP-PD.png'
 import LogoMail from '../pictures/logo-mail.svg'
 import LogoCalendar from '../pictures/logo-cal.svg'
 import LogoDrive from '../pictures/logo-drive.svg'
 import LogoVPN from '../pictures/logo-vpn.svg'
 
 interface Property {
-    pic: string
+    pic: React.ReactNode
     title: string
     text: string
     logo: string
@@ -30,11 +29,11 @@ interface AllProperties {
     drive: Property
 }
 
-export default function Home() {
+export default function Home({ data }) {
     const listOfPages: string[] = ['mail', 'vpn', 'calendar', 'drive', 'about']
     const allProperties: AllProperties = {
         mail: {
-            pic: PictureMail,
+            pic: <Img fluid={data.DPPM.childImageSharp.fluid} alt="ProtonMail" />,
             title: 'ProtonMail',
             text: 'Encrypted email that respects your privacy',
             logo: LogoMail,
@@ -43,7 +42,7 @@ export default function Home() {
             buttonUrl: 'https://protonmail.com/'
         },
         vpn: {
-            pic: PictureVPN,
+            pic: <Img fluid={data.DPPVPN.childImageSharp.fluid} alt="ProtonVPN" />,
             title: 'ProtonVPN',
             text: 'High-speed VPN to access blocked content and secure your Internet connection',
             logo: LogoVPN,
@@ -52,7 +51,7 @@ export default function Home() {
             buttonUrl: 'https://protonvpn.com/'
         },
         calendar: {
-            pic: PictureCalendar,
+            pic: <Img fluid={data.DPPC.childImageSharp.fluid} alt="ProtonCalendar" />,
             title: 'ProtonCalendar',
             text: 'Encrypted calendar that keeps your plans private',
             logo: LogoCalendar,
@@ -61,7 +60,7 @@ export default function Home() {
             buttonUrl: 'https://protonmail.com/blog/protoncalendar-beta-announcement/'
         },
         drive: {
-            pic: PictureDrive,
+            pic: <Img fluid={data.DPPD.childImageSharp.fluid} alt="ProtonDrive" />,
             title: 'ProtonDrive',
             text: 'Encrypted file storage on the cloud to store and backup your files safely',
             logo: LogoDrive,
@@ -139,3 +138,36 @@ export default function Home() {
         </div>
     )
 }
+
+export const query = graphql`
+{
+    DPPC: file(relativePath: { eq: "DP-PC.png" }) {
+        childImageSharp {
+            fluid(maxWidth: 510, quality: 100) {
+                ...GatsbyImageSharpFluid
+            }
+        }
+    }
+    DPPD: file(relativePath: { eq: "DP-PD.png" }) {
+        childImageSharp {
+            fluid(maxWidth: 510, quality: 100) {
+                ...GatsbyImageSharpFluid
+            }
+        }
+    }
+    DPPM: file(relativePath: { eq: "DP-PM.png" }) {
+        childImageSharp {
+            fluid(maxWidth: 510, quality: 100) {
+                ...GatsbyImageSharpFluid
+            }
+        }
+    }
+    DPPVPN: file(relativePath: { eq: "DP-PVPN.png" }) {
+        childImageSharp {
+            fluid(maxWidth: 510, quality: 100) {
+                ...GatsbyImageSharpFluid
+            }
+        }
+    }
+}
+`
