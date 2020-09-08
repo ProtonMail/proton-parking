@@ -143,29 +143,29 @@ export const query = graphql`
 {
     DPPC: file(relativePath: { eq: "DP-PC.png" }) {
         childImageSharp {
-            fluid(maxWidth: 510, quality: 100) {
-                ...GatsbyImageSharpFluid
+            fluid(maxWidth: 510, quality: 70) {
+                ...GatsbyImageSharpFluid_withWebp_tracedSVG
             }
         }
     }
     DPPD: file(relativePath: { eq: "DP-PD.png" }) {
         childImageSharp {
-            fluid(maxWidth: 510, quality: 100) {
-                ...GatsbyImageSharpFluid
+            fluid(maxWidth: 510, quality: 70) {
+                ...GatsbyImageSharpFluid_withWebp_tracedSVG
             }
         }
     }
     DPPM: file(relativePath: { eq: "DP-PM.png" }) {
         childImageSharp {
-            fluid(maxWidth: 510, quality: 100) {
-                ...GatsbyImageSharpFluid
+            fluid(maxWidth: 510, quality: 70) {
+                ...GatsbyImageSharpFluid_withWebp_tracedSVG
             }
         }
     }
     DPPVPN: file(relativePath: { eq: "DP-PVPN.png" }) {
         childImageSharp {
-            fluid(maxWidth: 510, quality: 100) {
-                ...GatsbyImageSharpFluid
+            fluid(maxWidth: 510, quality: 70) {
+                ...GatsbyImageSharpFluid_withWebp_tracedSVG
             }
         }
     }
