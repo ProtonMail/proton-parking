@@ -117,7 +117,7 @@ export default function Home({ data }: Props) {
     }
 
     return (
-        <div>
+        <>
             {checked === 'about' ? (
                 <AboutProton windowSize={windowWidth} />
             ) : (
@@ -162,7 +162,7 @@ export default function Home({ data }: Props) {
                     )
                 })}
             </div>
-        </div>
+        </>
     )
 }
 
