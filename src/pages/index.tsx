@@ -1,32 +1,32 @@
-import React, { useState, useEffect, useRef } from 'react'
-import { graphql } from 'gatsby'
-import Img, { FluidObject } from 'gatsby-image'
+import React, { useState, useEffect, useRef } from 'react';
+import { graphql } from 'gatsby';
+import Img, { FluidObject } from 'gatsby-image';
 
-import './layout.scss'
-import WelcomeProton from '../components/WelcomeProton/WelcomeProton'
-import ProtonProducts from '../components/ProtonProducts/ProtonProducts'
-import AboutProton from '../components/AboutProton/AboutProton'
-import LogoMail from '../pictures/logo-mail.svg'
-import LogoCalendar from '../pictures/logo-cal.svg'
-import LogoDrive from '../pictures/logo-drive.svg'
-import LogoVPN from '../pictures/logo-vpn.svg'
+import './layout.scss';
+import WelcomeProton from '../components/WelcomeProton/WelcomeProton';
+import ProtonProducts from '../components/ProtonProducts/ProtonProducts';
+import AboutProton from '../components/AboutProton/AboutProton';
+import LogoMail from '../pictures/logo-mail.svg';
+import LogoCalendar from '../pictures/logo-cal.svg';
+import LogoDrive from '../pictures/logo-drive.svg';
+import LogoVPN from '../pictures/logo-vpn.svg';
 
 interface Product {
-    pic: React.ReactNode
-    title: string
-    text: string
-    logo: string
-    color: string
-    button: string
-    buttonUrl: string
+    pic: React.ReactNode;
+    title: string;
+    text: string;
+    logo: string;
+    color: string;
+    button: string;
+    buttonUrl: string;
 }
 
 interface AllProducts {
-    [key: string]: Product
-    mail: Product
-    vpn: Product
-    calendar: Product
-    drive: Product
+    [key: string]: Product;
+    mail: Product;
+    vpn: Product;
+    calendar: Product;
+    drive: Product;
 }
 
 interface Props {
@@ -34,28 +34,28 @@ interface Props {
         DPPM: {
             childImageSharp: {
                 fluid: FluidObject;
-            }
-        }
+            };
+        };
         DPPVPN: {
             childImageSharp: {
                 fluid: FluidObject;
-            }
-        }
+            };
+        };
         DPPC: {
             childImageSharp: {
                 fluid: FluidObject;
-            }
-        }
+            };
+        };
         DPPD: {
             childImageSharp: {
                 fluid: FluidObject;
-            }
-        }
-    }
+            };
+        };
+    };
 }
 
 export default function Home({ data }: Props) {
-    const listOfPages: string[] = ['mail', 'vpn', 'calendar', 'drive', 'about']
+    const listOfPages: string[] = ['mail', 'vpn', 'calendar', 'drive', 'about'];
     const allProducts: AllProducts = {
         mail: {
             pic: <Img fluid={data.DPPM.childImageSharp.fluid} alt="ProtonMail" />,
@@ -64,7 +64,7 @@ export default function Home({ data }: Props) {
             logo: LogoMail,
             color: '#657ee4',
             button: 'Learn More',
-            buttonUrl: 'https://protonmail.com/'
+            buttonUrl: 'https://protonmail.com/',
         },
         vpn: {
             pic: <Img fluid={data.DPPVPN.childImageSharp.fluid} alt="ProtonVPN" />,
@@ -73,7 +73,7 @@ export default function Home({ data }: Props) {
             logo: LogoVPN,
             color: '#5FB364',
             button: 'Learn More',
-            buttonUrl: 'https://protonvpn.com/'
+            buttonUrl: 'https://protonvpn.com/',
         },
         calendar: {
             pic: <Img fluid={data.DPPC.childImageSharp.fluid} alt="ProtonCalendar" />,
@@ -82,7 +82,7 @@ export default function Home({ data }: Props) {
             logo: LogoCalendar,
             color: '#657EE4',
             button: 'Learn More',
-            buttonUrl: 'https://protonmail.com/blog/protoncalendar-beta-announcement/'
+            buttonUrl: 'https://protonmail.com/blog/protoncalendar-beta-announcement/',
         },
         drive: {
             pic: <Img fluid={data.DPPD.childImageSharp.fluid} alt="ProtonDrive" />,
@@ -91,36 +91,36 @@ export default function Home({ data }: Props) {
             logo: LogoDrive,
             color: '#00C5B8',
             button: 'Coming Soon',
-            buttonUrl: 'https://protonmail.com/blog/protondrive-security/'
+            buttonUrl: 'https://protonmail.com/blog/protondrive-security/',
         },
-    }
-    const [checked, setChecked] = useState('mail')
-    const checkedRef = useRef(checked)
-    const [windowWidth, setWidth] = useState(typeof window !== `undefined` ? window.innerWidth : 0)
+    };
+    const [checked, setChecked] = useState('mail');
+    const checkedRef = useRef(checked);
+    const [windowWidth, setWidth] = useState(typeof window !== `undefined` ? window.innerWidth : 0);
 
-    checkedRef.current = checked
+    checkedRef.current = checked;
 
     useEffect(() => {
         const updateWindowDimensions = () => {
-            const newWidth = typeof window !== `undefined` ? window.innerWidth : 0
-            setWidth(newWidth)
-        }
+            const newWidth = typeof window !== `undefined` ? window.innerWidth : 0;
+            setWidth(newWidth);
+        };
 
-        window.addEventListener('resize', updateWindowDimensions)
+        window.addEventListener('resize', updateWindowDimensions);
 
-        return () => window.removeEventListener('resize', updateWindowDimensions)
-    }, [])
+        return () => window.removeEventListener('resize', updateWindowDimensions);
+    }, []);
 
     const handleRadioChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-        setChecked(e.target.value)
-    }
+        setChecked(e.target.value);
+    };
 
     return (
         <>
             {checked === 'about' ? (
                 <AboutProton windowSize={windowWidth} />
             ) : (
-                <div className='main-container flex'>
+                <div className="main-container flex">
                     <WelcomeProton />
                     <ProtonProducts
                         picture={allProducts[checked].pic}
@@ -134,21 +134,18 @@ export default function Home({ data }: Props) {
                 </div>
             )}
             <div
-                className='select-product flex flex-column absolute'
+                className="select-product flex flex-column absolute"
                 style={{ top: checked === 'about' && windowWidth <= 680 ? '10px' : '' }}
             >
                 {listOfPages.map((page) => {
                     const radioText = allProducts[page] ? allProducts[page].title : 'About Proton';
                     return (
                         <>
-                            <label 
-                                htmlFor={page}
-                                title={radioText}
-                                >
+                            <label htmlFor={page} title={radioText}>
                                 <span className="sr-only">{radioText}</span>
                                 <input
-                                    className='select-radioButton cursor-pointer'
-                                    type='radio'
+                                    className="select-radioButton cursor-pointer"
+                                    type="radio"
                                     id={page}
                                     name={page}
                                     value={page}
@@ -158,42 +155,42 @@ export default function Home({ data }: Props) {
                                 />
                             </label>
                         </>
-                    )
+                    );
                 })}
             </div>
         </>
-    )
+    );
 }
 
 export const query = graphql`
-{
-    DPPC: file(relativePath: { eq: "DP-PC.png" }) {
-        childImageSharp {
-            fluid(maxWidth: 510, quality: 100) {
-                ...GatsbyImageSharpFluid_withWebp_tracedSVG
+    {
+        DPPC: file(relativePath: { eq: "DP-PC.png" }) {
+            childImageSharp {
+                fluid(maxWidth: 510, quality: 100) {
+                    ...GatsbyImageSharpFluid_withWebp_tracedSVG
+                }
+            }
+        }
+        DPPD: file(relativePath: { eq: "DP-PD.png" }) {
+            childImageSharp {
+                fluid(maxWidth: 510, quality: 100) {
+                    ...GatsbyImageSharpFluid_withWebp_tracedSVG
+                }
+            }
+        }
+        DPPM: file(relativePath: { eq: "DP-PM.png" }) {
+            childImageSharp {
+                fluid(maxWidth: 510, quality: 100) {
+                    ...GatsbyImageSharpFluid_withWebp_tracedSVG
+                }
+            }
+        }
+        DPPVPN: file(relativePath: { eq: "DP-PVPN.png" }) {
+            childImageSharp {
+                fluid(maxWidth: 510, quality: 100) {
+                    ...GatsbyImageSharpFluid_withWebp_tracedSVG
+                }
             }
         }
     }
-    DPPD: file(relativePath: { eq: "DP-PD.png" }) {
-        childImageSharp {
-            fluid(maxWidth: 510, quality: 100) {
-                ...GatsbyImageSharpFluid_withWebp_tracedSVG
-            }
-        }
-    }
-    DPPM: file(relativePath: { eq: "DP-PM.png" }) {
-        childImageSharp {
-            fluid(maxWidth: 510, quality: 100) {
-                ...GatsbyImageSharpFluid_withWebp_tracedSVG
-            }
-        }
-    }
-    DPPVPN: file(relativePath: { eq: "DP-PVPN.png" }) {
-        childImageSharp {
-            fluid(maxWidth: 510, quality: 100) {
-                ...GatsbyImageSharpFluid_withWebp_tracedSVG
-            }
-        }
-    }
-}
-`
+`;
