@@ -11,7 +11,7 @@ import LogoCalendar from '../pictures/logo-cal.svg'
 import LogoDrive from '../pictures/logo-drive.svg'
 import LogoVPN from '../pictures/logo-vpn.svg'
 
-interface Property {
+interface Product {
     pic: React.ReactNode
     title: string
     text: string
@@ -21,12 +21,12 @@ interface Property {
     buttonUrl: string
 }
 
-interface AllProperties {
-    [key: string]: Property
-    mail: Property
-    vpn: Property
-    calendar: Property
-    drive: Property
+interface AllProducts {
+    [key: string]: Product
+    mail: Product
+    vpn: Product
+    calendar: Product
+    drive: Product
 }
 
 interface Props {
@@ -52,12 +52,11 @@ interface Props {
             }
         }
     }
-    
 }
 
 export default function Home({ data }: Props) {
     const listOfPages: string[] = ['mail', 'vpn', 'calendar', 'drive', 'about']
-    const allProperties: AllProperties = {
+    const allProducts: AllProducts = {
         mail: {
             pic: <Img fluid={data.DPPM.childImageSharp.fluid} alt="ProtonMail" />,
             title: 'ProtonMail',
@@ -124,13 +123,13 @@ export default function Home({ data }: Props) {
                 <div className='main-container flex'>
                     <WelcomeProton />
                     <ProtonProducts
-                        picture={allProperties[checked].pic}
-                        title={allProperties[checked].title}
-                        logo={allProperties[checked].logo}
-                        text={allProperties[checked].text}
-                        color={allProperties[checked].color}
-                        button={allProperties[checked].button}
-                        buttonUrl={allProperties[checked].buttonUrl}
+                        picture={allProducts[checked].pic}
+                        title={allProducts[checked].title}
+                        logo={allProducts[checked].logo}
+                        text={allProducts[checked].text}
+                        color={allProducts[checked].color}
+                        button={allProducts[checked].button}
+                        buttonUrl={allProducts[checked].buttonUrl}
                     />
                 </div>
             )}
@@ -139,7 +138,7 @@ export default function Home({ data }: Props) {
                 style={{ top: checked === 'about' && windowWidth <= 680 ? '10px' : '' }}
             >
                 {listOfPages.map((page) => {
-                    const radioText = allProperties[page] ? allProperties[page].title : 'About Proton';
+                    const radioText = allProducts[page] ? allProducts[page].title : 'About Proton';
                     return (
                         <>
                             <label 
