@@ -12,7 +12,7 @@ interface Props {
     className: string;
 }
 
-export default function SocialNetworks({ className = '' }) {
+export default function SocialNetworks({ className = '' }: Props) {
     return (
         <ul className={classnames(['flex unstyled flex-item-noshrink m0', className])}>
             <li>

@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef, Fragment } from 'react';
 import { graphql } from 'gatsby';
 import Img, { FluidObject } from 'gatsby-image';
 
@@ -10,6 +10,7 @@ import LogoMail from '../pictures/logo-mail.svg';
 import LogoCalendar from '../pictures/logo-cal.svg';
 import LogoDrive from '../pictures/logo-drive.svg';
 import LogoVPN from '../pictures/logo-vpn.svg';
+import SEO from '../components/seo';
 
 interface Product {
     pic: React.ReactNode;
@@ -117,6 +118,7 @@ export default function Home({ data }: Props) {
 
     return (
         <>
+            <SEO title="Proton Parking Page"></SEO>
             {checked === 'about' ? (
                 <AboutProton windowSize={windowWidth} />
             ) : (
@@ -140,7 +142,7 @@ export default function Home({ data }: Props) {
                 {listOfPages.map((page) => {
                     const radioText = allProducts[page] ? allProducts[page].title : 'About Proton';
                     return (
-                        <>
+                        <Fragment key={page}>
                             <label htmlFor={page} title={radioText}>
                                 <span className="sr-only">{radioText}</span>
                                 <input
@@ -149,12 +151,11 @@ export default function Home({ data }: Props) {
                                     id={page}
                                     name={page}
                                     value={page}
-                                    key={page}
                                     checked={checked === page}
                                     onChange={handleRadioChange}
                                 />
                             </label>
-                        </>
+                        </Fragment>
                     );
                 })}
             </div>
