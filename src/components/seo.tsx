@@ -7,11 +7,10 @@ type SEOProps = {
     lang?: string;
     meta?: Array<{ name: string; content: string }>;
     title: string;
+    canonical: string;
 };
 
-
-
-function SEO({ description = '', lang = 'en', meta = [], title }: SEOProps) {
+function SEO({ description = '', lang = 'en', meta = [], title, canonical }: SEOProps) {
     const { site } = useStaticQuery(
         graphql`
             query {
@@ -34,6 +33,7 @@ function SEO({ description = '', lang = 'en', meta = [], title }: SEOProps) {
                 lang,
             }}
             title={title}
+            link={canonical ? [{ rel: 'canonical', key: canonical, href: canonical }] : []}
             meta={[
                 {
                     name: `description`,

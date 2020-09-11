@@ -118,7 +118,7 @@ export default function Home({ data }: Props) {
 
     return (
         <>
-            <SEO title="Proton Parking Page"></SEO>
+            <SEO title="Proton Parking Page" canonical="https://www.example.com"></SEO>
             {checked === 'about' ? (
                 <AboutProton windowSize={windowWidth} />
             ) : (
@@ -195,3 +195,4 @@ export const query = graphql`
         }
     }
 `;
+

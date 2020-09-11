@@ -3,8 +3,7 @@ module.exports = {
     siteMetadata: {
         title: 'Proton Parking Page',
         description: 'Proton',
-        author: 'ProtonTeam'
-
+        author: 'ProtonTeam',
     },
     plugins: [
         `gatsby-plugin-scroll-reveal`,
@@ -24,21 +23,27 @@ module.exports = {
                 name: `pictures`,
                 path: `${__dirname}/src/pictures`,
             },
-          },
-        `gatsby-transformer-sharp`, 
+        },
+        `gatsby-transformer-sharp`,
         `gatsby-plugin-sharp`,
         `gatsby-plugin-react-helmet`,
         {
+            resolve: `gatsby-plugin-react-helmet-canonical-urls`,
+            options: {
+                siteUrl: `https://www.example.com`,
+            },
+        },
+        {
             resolve: `gatsby-plugin-manifest`,
             options: {
-              name: `GatsbyJS`,
-              short_name: `GatsbyJS`,
-              start_url: `/`,
-              background_color: `#f7f0eb`,
-              theme_color: `#a2466c`,
-              display: `standalone`,
-              icon: `src/pictures/mountain.jpg`
+                name: `GatsbyJS`,
+                short_name: `GatsbyJS`,
+                start_url: `/`,
+                background_color: `#f7f0eb`,
+                theme_color: `#a2466c`,
+                display: `standalone`,
+                icon: `src/pictures/mountain.jpg`,
             },
-          },
+        },
     ],
-}
+};
