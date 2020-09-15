@@ -1,0 +1,25 @@
+.about-container {
+    height: 100vh;
+    @include respond-to($breakpoint-small) {
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+}
+.about-content {
+    @include respond-to($breakpoint-small) {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+    }
+}
+.about-title {
+    margin-bottom: 10%;
+    line-height: 1;
+}
+.about-picture {
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}

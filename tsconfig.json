@@ -1,0 +1,4 @@
+  
+{
+    "extends": "proton-shared/tsconfig.base.json"
+}

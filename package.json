@@ -1,0 +1,59 @@
+{
+  "name": "proton-parking-page",
+  "private": true,
+  "description": "Parking Page for Proton",
+  "version": "0.1.0",
+  "license": "0BSD",
+  "scripts": {
+    "build": "gatsby build",
+    "develop": "gatsby develop",
+    "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\"",
+    "start": "npm run develop",
+    "serve": "gatsby serve",
+    "clean": "gatsby clean",
+    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1",
+    "extract": "./node_modules/.bin/babel --config-file ./babel-extract.config.js -o tmp/chunk.js 'src/**/*.{js,jsx,ts,tsx}' && rm -rf tmp"
+  },
+  "dependencies": {
+    "babel-preset-gatsby": "^0.5.8",
+    "design-system": "github:ProtonMail/design-system.git#master",
+    "gatsby": "^2.24.47",
+    "gatsby-image": "^2.4.17",
+    "gatsby-plugin-manifest": "^2.4.28",
+    "gatsby-plugin-react-helmet": "^3.3.10",
+    "gatsby-plugin-react-helmet-canonical-urls": "^1.4.0",
+    "gatsby-plugin-robots-txt": "^1.5.1",
+    "gatsby-plugin-sass": "^2.3.12",
+    "gatsby-plugin-scroll-reveal": "0.0.7",
+    "gatsby-plugin-sharp": "^2.6.32",
+    "gatsby-plugin-typescript": "^2.4.18",
+    "gatsby-source-filesystem": "^2.3.25",
+    "gatsby-transformer-sharp": "^2.5.14",
+    "imagemin-pngquant": "^5.0.1",
+    "node-sass": "^4.14.1",
+    "pngquant-bin": "^3.1.1",
+    "proton-shared": "github:ProtonMail/proton-shared#master",
+    "react": "^16.12.0",
+    "react-components": "github:ProtonMail/react-components#master",
+    "react-dom": "^16.12.0",
+    "react-helmet": "^6.1.0",
+    "ttag": "^1.7.22"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.10.5",
+    "@babel/plugin-transform-typescript": "^7.11.0",
+    "@types/node": "^14.6.2",
+    "@types/react": "^16.9.49",
+    "@types/react-dom": "^16.9.8",
+    "@types/react-helmet": "^6.1.0",
+    "prettier": "2.0.5",
+    "ttag-cli": "^1.8.4"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ProtonMail/proton-parking.git"
+  },
+  "bugs": {
+    "url": "https://github.com/gatsbyjs/gatsby/issues"
+  }
+}

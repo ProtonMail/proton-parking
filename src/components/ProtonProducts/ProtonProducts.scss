@@ -1,0 +1,80 @@
+$position-gradient: 75% !default;
+
+.protonProducts {
+    background-image: linear-gradient(to bottom, var(--colorGradient, #{$pm-blue}) 0%, var(--colorGradient, #{$pm-blue}) #{$position-gradient}, #{$white} #{$position-gradient}, #{$white} 100%);
+    @include respond-to($breakpoint-small) {
+        min-height: 100vh;
+    }
+}
+.protonProducts-inner {
+    padding-top: 10%;
+    @include respond-to($breakpoint-small) {
+        padding-top: 5%;
+    }
+}
+.protonProducts-logo {
+    width: 269px;
+    height: 40px;
+}
+
+.protonProducts-button {
+    width: 21rem;
+    height: 6rem;
+    border: 2px solid currentColor;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    color: $white;
+    &:focus,
+    &:hover,
+    &:active {
+        color: $black;
+        text-decoration: none;
+    }
+    @include respond-to($breakpoint-tiny) {
+        width: 18rem;
+        height: 5rem;
+    }
+}
+.protonProducts-picture {
+    top: calc(#{$position-gradient} - 150px); // gradient - half height of picture
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+    width: 510px;
+    height: 299px;
+    position: absolute;
+    @include respond-to($breakpoint-medium-landscape) {
+        width: 374px;
+        height: 219px;
+        top: calc(#{$position-gradient} - 110px);
+    }
+    @include respond-to($breakpoint-medium) {
+        width: 320px;
+        height: 219px;
+        top: calc(#{$position-gradient} - 110px);
+    }
+    @include respond-to($breakpoint-small) {
+        width: 374px;
+        height: 219px;
+    }
+    @include respond-to($breakpoint-tiny) {
+        width: 250px;
+        height: 150px;
+        top: calc(#{$position-gradient} - 75px);
+    }
+    // fixes for really low height
+    @include respond-to(700, 'height') {
+        width: 320px;
+        height: 219px;
+        top: calc(#{$position-gradient} - 110px);
+    }
+    @include respond-to(600, 'height') {
+        width: 250px;
+        height: 150px;
+        top: calc(#{$position-gradient} - 75px);
+    }
+
+}

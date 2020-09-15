@@ -1,0 +1,65 @@
+.welcomeProton {
+    min-height: 100vh;
+    height: auto;
+    @include respond-to($breakpoint-tiny) {
+        padding: 1em;
+    }
+}
+.welcomeProton-inner {
+    padding-top: 10%;
+    max-width: rem(600);
+    @include respond-to($breakpoint-small) {
+        padding-top: 0;
+    }
+}
+.welcomeProton-title {
+    font-weight: bold;
+    max-width: 40rem;
+    line-height: 1;
+    @include respond-to($breakpoint-small) {
+        padding-top: 1em;
+    }
+}
+.arrow-right-custom-container {
+    @include respond-to($breakpoint-small) {
+        min-height: 83px; // enough space for handling rotation ^^
+    }
+    // fixes for really low height
+    @include respond-to(600, 'height') {
+        display: none;
+    }
+}
+.arrow-right-custom {
+    @include respond-to($breakpoint-small) {
+        transform: rotate(90deg) translateY(-16px);
+        transform-origin: 0;
+    }
+}
+.welcome-icons {
+    @include respond-to($breakpoint-small) {
+        order: -1;
+    }
+}
+
+
+// meh
+.IconFb {
+    width: rem(14);
+    height: rem(27);
+}
+.IconTw {
+    width: rem(27);
+    height: rem(22);
+}
+.IconIg {
+    width: rem(23);
+    height: rem(23);
+}
+.IconMd {
+    width: rem(22);
+    height: rem(23);
+}
+.IconRd {
+    width: rem(25);
+    height: rem(23);
+}

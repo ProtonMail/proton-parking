@@ -1,0 +1,36 @@
+$base-font: 19 !default;
+$size-h1: 59 !default;
+$font-family: Arial;
+
+$size-icons-social: 2.5rem !default;
+
+$min-height-content: 60rem !default; // for mobile, proton products
+
+$list-paddings-tablet-values: 0, 1, 2;
+$list-margins-tablet-values: 0, 1, 2;
+$list-paddings-mobile-values: 0, 1, 2;
+$list-margins-mobile-values: 0, 1, 2;
+$list-paddings-values: 0, 1, 2;
+$list-margins-values: 0, 1, 2;
+
+@import '~design-system/_sass/reusable-components/design-system-config';
+@import '~design-system/_sass/reusable-components/design-system-reset';
+@import '~design-system/_sass/design-system-website/webfonts-hx';
+@import '~design-system/_sass/reusable-components/design-system-colors';
+@import '~design-system/_sass/reusable-components/design-system-util-typo-fix';
+@import '~design-system/_sass/reusable-components/design-system-links-icons';
+@import '~design-system/_sass/reusable-components/design-system-layout-modules';
+
+@import './index.scss';
+@import '../components/WelcomeProton/WelcomeProton.scss';
+@import '../components/ProtonProducts/ProtonProducts.scss';
+@import '../components/AboutProton/AboutProton.scss';
+
+@import '~design-system/_sass/reusable-components/design-system-responsive';
+
+
+@import '~design-system/_sass/reusable-components/design-system-print';
+@import '~design-system/_sass/reusable-components/design-system-viewport-fix';
+@import '~design-system/_sass/reusable-components/design-system-reduced-motion';
+
+
