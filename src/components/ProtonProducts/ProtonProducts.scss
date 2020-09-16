@@ -1,7 +1,13 @@
 $position-gradient: 75% !default;
 
 .protonProducts {
-    background-image: linear-gradient(to bottom, var(--colorGradient, #{$pm-blue}) 0%, var(--colorGradient, #{$pm-blue}) #{$position-gradient}, #{$white} #{$position-gradient}, #{$white} 100%);
+    background-image: linear-gradient(
+        to bottom,
+        var(--colorGradient, #{$pm-blue}) 0%,
+        var(--colorGradient, #{$pm-blue}) #{$position-gradient},
+        #{$white} #{$position-gradient},
+        #{$white} 100%
+    );
     @include respond-to($breakpoint-small) {
         min-height: 100vh;
     }
@@ -10,6 +16,9 @@ $position-gradient: 75% !default;
     padding-top: 10%;
     @include respond-to($breakpoint-small) {
         padding-top: 5%;
+    }
+    @include respond-to(600, 'height') {
+        padding-top: 0;
     }
 }
 .protonProducts-logo {
@@ -72,9 +81,8 @@ $position-gradient: 75% !default;
         top: calc(#{$position-gradient} - 110px);
     }
     @include respond-to(600, 'height') {
-        width: 250px;
+        width: 150px;
         height: 150px;
-        top: calc(#{$position-gradient} - 75px);
+        top: calc(#{$position-gradient} - 40px);
     }
-
 }
