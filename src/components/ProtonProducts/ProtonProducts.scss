@@ -11,6 +11,9 @@ $position-gradient: 75% !default;
     @include respond-to($breakpoint-small) {
         padding-top: 5%;
     }
+    @include respond-to(600, 'height') {
+        padding-top: 0;
+    }
 }
 .protonProducts-logo {
     width: 269px;
@@ -72,9 +75,8 @@ $position-gradient: 75% !default;
         top: calc(#{$position-gradient} - 110px);
     }
     @include respond-to(600, 'height') {
-        width: 250px;
+        width: 150px;
         height: 150px;
-        top: calc(#{$position-gradient} - 75px);
+        top: calc(#{$position-gradient} - 40px);
     }
-
 }
