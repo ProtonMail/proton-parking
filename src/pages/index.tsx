@@ -96,19 +96,12 @@ export default function Home({ data }: Props) {
         },
     };
     const [checked, setChecked] = useState('mail');
-    // const [prevStateChecked, setPrevStateChecked] = useState(null);
     const [canScroll, setScrolled] = useState(true);
     const checkedRef = useRef(checked);
     const [windowWidth, setWidth] = useState(typeof window !== `undefined` ? window.innerWidth : 0);
 
     checkedRef.current = checked;
 
-    // useEffect(() => {
-    //     // checked === "about" ? window.scrollTo(0,900) : ""
-    //     if (prevStateChecked === "about"){
-    //         window.scrollTo(0,900)
-    //     }
-    // })
     useEffect(() => {
         const updateWindowDimensions = () => {
             const newWidth = typeof window !== `undefined` ? window.innerWidth : 0;
@@ -120,49 +113,21 @@ export default function Home({ data }: Props) {
         return () => window.removeEventListener('resize', updateWindowDimensions);
     }, []);
 
-    useEffect(() => {
-        // window.addEventListener('scroll', handleScroll,true);
-
-        // return () => window.removeEventListener('scroll', handleScroll);
-
-        window.addEventListener('wheel', handleScroll);
-
-        return () => window.removeEventListener('wheel', handleScroll);
-    }, []);
-
     const handleRadioChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         setChecked(e.target.value);
     };
 
     const handleScroll = (e: any) => {
-        e.preventDefault();
-        e.stopPropagation();
-        console.log(checked);
         if (canScroll) {
             setScrolled(false);
-            //   console.log(canScroll)
             const indexOfChecked = listOfPages.indexOf(checked);
-            //   console.log(indexOfChecked);
-            //Subtract the two and conclude
             if (e.deltaY > 0) {
-                // console.log('Up');
-                setChecked(listOfPages[indexOfChecked + 1]);
-                // console.log(checked)
                 if (indexOfChecked + 1 < listOfPages.length) {
-                    console.log(indexOfChecked + 1)
                     setChecked(listOfPages[indexOfChecked + 1]);
-                } else {
-                    // console.log('else up',listOfPages[0])
-                    setChecked(listOfPages[listOfPages.length + 1]);
                 }
-            } else if (e.deltaY < -0) {
-                // console.log('Down');
+            } else if (e.deltaY < 0) {
                 if (indexOfChecked - 1 > -1) {
-                    // console.log('if down',listOfPages[indexOfChecked - 1])
                     setChecked(listOfPages[indexOfChecked - 1]);
-                } else {
-                    // console.log('ekse down',listOfPages[listOfPages.length - 1])
-                    setChecked(listOfPages[0]);
                 }
             }
 
@@ -173,7 +138,7 @@ export default function Home({ data }: Props) {
     };
 
     return (
-        <>
+        <div onWheel={windowWidth >= 680 ? handleScroll : undefined}>
             <SEO title="Proton Parking Page" canonical="https://www.example.com"></SEO>
             {checked === 'about' ? (
                 <AboutProton windowSize={windowWidth} />
@@ -215,7 +180,7 @@ export default function Home({ data }: Props) {
                     );
                 })}
             </div>
-        </>
+        </div>
     );
 }
 
