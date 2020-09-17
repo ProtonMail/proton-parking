@@ -1,8 +1,13 @@
 body {
     // tiny trick to avoid managing overflow :)
     background-image: linear-gradient(to right, #{$pm-global-grey} 0%, #{$pm-global-grey} 50%, $white 50% , $white 100%);
+//     overflow: auto;
+//   overscroll-behavior: contain;
 }
-
+.main-container {
+    height: 100vh;
+    position: relative;
+}
 $input-size: 1rem !default;
 .select-product {
     position: absolute;
