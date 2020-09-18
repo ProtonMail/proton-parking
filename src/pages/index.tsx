@@ -96,10 +96,17 @@ export default function Home({ data }: Props) {
         },
     };
     const [checked, setChecked] = useState('mail');
+    const [windowScroll, setWindowScroll] = useState(false);
+    const [canScroll, setScrolled] = useState(true);
     const checkedRef = useRef(checked);
     const [windowWidth, setWidth] = useState(typeof window !== `undefined` ? window.innerWidth : 0);
 
     checkedRef.current = checked;
+
+    useEffect(() => {
+        checked === 'about' ? setWindowScroll(true) : null;
+        windowScroll === true ? window.scrollTo(0, 1200) : null;
+    });
 
     useEffect(() => {
         const updateWindowDimensions = () => {
@@ -116,8 +123,28 @@ export default function Home({ data }: Props) {
         setChecked(e.target.value);
     };
 
+    const handleScroll = (e: any) => {
+        if (canScroll) {
+            setScrolled(false);
+            const indexOfChecked = listOfPages.indexOf(checked);
+            if (e.deltaY > 0) {
+                if (indexOfChecked + 1 < listOfPages.length) {
+                    setChecked(listOfPages[indexOfChecked + 1]);
+                }
+            } else if (e.deltaY < 0) {
+                if (indexOfChecked - 1 > -1) {
+                    setChecked(listOfPages[indexOfChecked - 1]);
+                }
+            }
+
+            setTimeout(() => {
+                setScrolled(true);
+            }, 1000);
+        }
+    };
+
     return (
-        <>
+        <div onWheel={windowWidth >= 680 ? handleScroll : undefined}>
             <SEO title="Proton Parking Page" canonical="https://www.example.com"></SEO>
             {checked === 'about' ? (
                 <AboutProton windowSize={windowWidth} />
@@ -159,7 +186,7 @@ export default function Home({ data }: Props) {
                     );
                 })}
             </div>
-        </>
+        </div>
     );
 }
 
@@ -195,4 +222,3 @@ export const query = graphql`
         }
     }
 `;
-
