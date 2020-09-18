@@ -96,11 +96,17 @@ export default function Home({ data }: Props) {
         },
     };
     const [checked, setChecked] = useState('mail');
+    const [windowScroll, setWindowScroll] = useState(false);
     const [canScroll, setScrolled] = useState(true);
     const checkedRef = useRef(checked);
     const [windowWidth, setWidth] = useState(typeof window !== `undefined` ? window.innerWidth : 0);
 
     checkedRef.current = checked;
+
+    useEffect(() => {
+        checked === 'about' ? setWindowScroll(true) : null;
+        windowScroll === true ? window.scrollTo(0, 1200) : null;
+    });
 
     useEffect(() => {
         const updateWindowDimensions = () => {
