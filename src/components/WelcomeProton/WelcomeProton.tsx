@@ -11,8 +11,8 @@ function WelcomeProton() {
                 <h1 className="welcomeProton-title color-white flex-item-noshrink">
                     Welcome to <span className="color-pm-blue">Proton</span>
                 </h1>
-                <div className="flex-item-fluid-auto">
-                    <p className="welcomeProton-description">
+                <div className="flex-item-fluid-auto welcomeProton-description">
+                    <p>
                         You've arrived at a Proton product that doesn’t exist (yet).
                     </p>
                     <p className="welcomeProton-text bold">
