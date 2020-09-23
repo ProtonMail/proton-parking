@@ -6,12 +6,17 @@
     }
 }
 .welcomeProton-inner {
-    padding-top: 10%;
+    padding-top: 20%;
+    padding-bottom: 10%;
     max-width: rem(600);
     margin: 0 auto;
+    @include respond-to($breakpoint-large) {
+        padding: 10% 10% 0 10%;
+    }
     @include respond-to($breakpoint-small) {
-        padding-top: 0;
-    }@include respond-to(600, 'height') {
+        padding: 0;
+    }
+    @include respond-to(600, 'height') {
         padding-top: 0;
     }
 }
@@ -21,6 +26,15 @@
     line-height: 1;
     @include respond-to($breakpoint-small) {
         padding-top: 1em;
+    }
+}
+.welcomeProton-description {
+    padding-right: 0;
+    @include respond-to($breakpoint-large) {
+        padding-right: 10%;
+    }
+    @include respond-to($breakpoint-small) {
+        padding-right: 0;
     }
 }
 .arrow-right-custom-container {

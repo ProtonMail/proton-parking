@@ -7,7 +7,10 @@ $position-gradient: 75% !default;
     }
 }
 .protonProducts-inner {
-    padding-top: 10%;
+    padding-top: 20%;
+    @include respond-to($breakpoint-large) {
+        padding-top: 10%;
+    }
     @include respond-to($breakpoint-small) {
         padding-top: 5%;
     }
@@ -18,6 +21,12 @@ $position-gradient: 75% !default;
 .protonProducts-logo {
     width: 269px;
     height: 40px;
+}
+.protonProducts-text {
+    padding: 0 20%;
+    @include respond-to($breakpoint-small) {
+        padding: 0;
+    }
 }
 
 .protonProducts-button {
@@ -69,7 +78,7 @@ $position-gradient: 75% !default;
         top: calc(#{$position-gradient} - 75px);
     }
     // fixes for really low height
-    @include respond-to(700, 'height') {
+    @include respond-to(850, 'height') {
         width: 320px;
         height: 219px;
         top: calc(#{$position-gradient} - 110px);
