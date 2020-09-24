@@ -1,8 +1,6 @@
 body {
     // tiny trick to avoid managing overflow :)
-    background-image: linear-gradient(to right, #{$pm-global-grey} 0%, #{$pm-global-grey} 50%, $white 50% , $white 100%);
-//     overflow: auto;
-//   overscroll-behavior: contain;
+    background-image: linear-gradient(to right, #{$pm-global-grey} 0%, #{$pm-global-grey} 50%, $white 50%, $white 100%);
 }
 .main-container {
     height: 100vh;
@@ -14,20 +12,29 @@ $input-size: 1rem !default;
     top: 50%;
     right: 20px;
     transform: translateY(-50%);
-    
+
     @include respond-to($breakpoint-small) {
         top: calc(100vh + 10px);
         transform: none;
         right: 10px;
     }
-
-}
-label,
-input[type='radio'] {
-    cursor: pointer;
 }
 input[type='radio'] {
     width: $input-size;
     height: $input-size;
     margin-bottom: $input-size/2;
+    -webkit-appearance: none !important;
+    -moz-appearance: none !important;
+    appearance: none !important;
+    border-radius: 50%;
+    border: 1px solid $white;
+    transition: 0.2s all linear;
+    cursor: pointer;
+}
+input:checked {
+    border: 5px solid $white;
+}
+input:focus,
+input:hover {
+    outline: 0;
 }
