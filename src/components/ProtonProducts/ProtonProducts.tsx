@@ -18,7 +18,7 @@ function ProtonProducts({ color, title, logo, button, buttonUrl, picture, text }
             style={{ ['--colorGradient' as any]: color }}
         >
             <div className="protonProducts-inner">
-                <h2 className="aligncenter mb2">
+                <h2 className="aligncenter mb1">
                     <img
                         className="protonProducts-logo mrauto mlauto w100"
                         width="269"

@@ -78,14 +78,14 @@ $position-gradient: 75% !default;
         top: calc(#{$position-gradient} - 75px);
     }
     // fixes for really low height
-    @include respond-to(850, 'height') {
+    @include respond-to(650, 'height') {
         width: 320px;
         height: 219px;
         top: calc(#{$position-gradient} - 110px);
     }
     @include respond-to(600, 'height') {
-        width: 150px;
+        width: 250px;
         height: 150px;
-        top: calc(#{$position-gradient} - 40px);
+        top: calc(#{$position-gradient} - 75px);
     }
 }
