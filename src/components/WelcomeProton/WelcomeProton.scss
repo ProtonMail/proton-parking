@@ -7,11 +7,14 @@
 }
 .welcomeProton-inner {
     padding-top: 20%;
-    padding-bottom: 10%;
+    padding-bottom: 15%;
     max-width: rem(600);
     margin: 0 auto;
     @include respond-to($breakpoint-large) {
         padding: 10% 10% 0 10%;
+    }
+    @include respond-to($breakpoint-medium-landscape) {
+        padding: 10%;
     }
     @include respond-to($breakpoint-small) {
         padding: 0;
