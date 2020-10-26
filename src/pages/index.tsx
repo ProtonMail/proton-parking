@@ -90,7 +90,7 @@ export default function Home({ data }: Props) {
             title: 'ProtonDrive',
             text: 'Encrypted file storage on the cloud to store and backup your files safely',
             logo: LogoDrive,
-            color: '#00C5B8',
+            color: '#657EE4',
             button: 'Coming Soon',
             buttonUrl: 'https://protonmail.com/blog/protondrive-security/',
         },
